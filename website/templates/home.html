@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %}
+
+{% block content %}
+<h1 align="center">Activities</h1>
+<ul class="list-group list-group-flush" id="activities">
+    {% for activity in user.activities %}
+    <li class="list-group-item">{{ activity.title}}</li>
+    <li class="list-group-item">{{ activity.description}}</li>
+    <button type="button" class="close" onClick="deleteActivity({{ activity.id }})">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <a href="{{ url_for('views.edit_activity', activity_id=activity.id) }}">
+        <span class="badge badge-warning">Edit</span>
+    </a>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('views.add_activity') }}">
+    <span class="badge badge-warning">Add activity</span>
+</a>
+{% endblock %}

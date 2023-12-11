@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %}
+{% block content %}
+<form method="POST">
+    <label for="title">Activity Title:</label>
+    <input type="text" id="title" name="title" class="form-control" required>
+    
+    <label for="description">Activity Description:</label>
+    <textarea name="description" id="description" class="form-control" required></textarea>
+<br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary"> Add activity</button>
+    </div>
+</form>
+{% endblock %}

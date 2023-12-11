@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %} Edit Activity {% endblock %}
+
+{% block content %}
+  <h1>Edit Activity</h1>
+  <form method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="{{ activity.title }}" class="form-control" required>
+
+    <label for="description">Description:</label>
+    <textarea name="description" id="description" class="form-control" required>{{ activity.description }}</textarea>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </form>
+{% endblock %}
