@@ -12,21 +12,28 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['GET', 'POST'])
 @login_required
 def home():
+    filtered_activities= []
     if request.method == 'POST':
-        title = request.form.get('title')
-        description = request.form.get('description')
-        
-        existing_activity = Activity.query.filter_by(title=title, user_id=current_user.id).first()
-        
-        if existing_activity:
-            flash('Activity with the same title already exists.', category='error')
-        else:
-            new_activity = Activity(title=title, description=description, user_id=current_user.id)
-            db.session.add(new_activity)
-            db.session.commit()
-            flash('Note added!', category='success')
+        # Your existing code for adding a new activity
 
-    return render_template("home.html", user=current_user)
+    # Query activities with at least one boolean attribute set to True
+        filtered_activities = Activity.query.filter_by(user_id=current_user.id).filter(
+        db.or_(
+            Activity.nightlife == True,
+            Activity.restaurant == True,
+            Activity.bakery == True,
+            Activity.activity == True,
+            Activity.adult_ent == True,
+            Activity.nightclub == True,
+            Activity.music_venue == True,
+            Activity.comedy_club == True,
+            Activity.outdoors == True,
+            Activity.visited == True,
+        )
+    ).all()
+
+    return render_template("home.html", user=current_user, activities=filtered_activities)
+
 
 @views.route('/add-activity', methods=['GET','POST'])
 @login_required
@@ -35,13 +42,37 @@ def add_activity():
         # Handle the form submission logic
         title = request.form.get('title')
         description = request.form.get('description')
+        nightlife = 'nightlife' in request.form
+        restaurant = 'restaurant' in request.form
+        bakery = 'bakery' in request.form
+        activity = 'activity' in request.form
+        adult_ent = 'adult_ent' in request.form
+        nightclub = 'nightclub' in request.form
+        music_venue = 'music_venue' in request.form
+        comedy_club = 'comedy_club' in request.form
+        outdoors = 'outdoors' in request.form
+        visited = 'visited' in request.form
+        
         
         existing_activity = Activity.query.filter_by(title=title, user_id=current_user.id).first()
         
         if existing_activity:
             flash('Activity with the same title already exists.', category='error')
         else:
-            new_activity = Activity(title=title, description=description, user_id=current_user.id)
+            new_activity = Activity(
+                title=title, 
+                description=description, 
+                user_id=current_user.id,
+                nightlife=nightlife,
+                restaurant=restaurant,
+                bakery=bakery,
+                activity=activity,
+                adult_ent=adult_ent,
+                nightclub=nightclub,
+                music_venue=music_venue,
+                comedy_club=comedy_club,
+                outdoors=outdoors,
+                visited=visited)            
             db.session.add(new_activity)
             db.session.commit()
             flash('Activity added!', category='success')
@@ -79,10 +110,31 @@ def edit_activity(activity_id):
     if request.method == 'POST':
         title = request.form.get('title')
         description = request.form.get('description')
+        nightlife = 'nightlife' in request.form
+        restaurant = 'restaurant' in request.form
+        bakery = 'bakery' in request.form
+        activity = 'activity' in request.form
+        adult_ent = 'adult_ent' in request.form
+        nightclub = 'nightclub' in request.form
+        music_venue = 'music_venue' in request.form
+        comedy_club = 'comedy_club' in request.form
+        outdoors = 'outdoors' in request.form
+        visited = 'visited' in request.form
 
         # Update the activity with the new information
         activity_to_edit.title = title
         activity_to_edit.description = description
+        activity_to_edit.nightlife = nightlife
+        activity_to_edit.restuarant = restaurant
+        activity_to_edit.bakery = bakery
+        activity_to_edit.activity = activity
+        activity_to_edit.adult_ent = adult_ent
+        activity_to_edit.nightclub = nightclub
+        activity_to_edit.music_venue = music_venue
+        activity_to_edit.comedy_club = comedy_club
+        activity_to_edit.outdoors = outdoors
+        activity_to_edit.visited = visited
+        
 
         db.session.commit()
         flash('Activity updated successfully!', category='success')

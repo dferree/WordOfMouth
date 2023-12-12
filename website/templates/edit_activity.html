@@ -10,6 +10,36 @@
     <label for="description">Description:</label>
     <textarea name="description" id="description" class="form-control" required>{{ activity.description }}</textarea>
 
+    <label>
+      <input type="checkbox" name="nightlife"{% if activity.nightlife %}checked{% endif %}> Nightlife
+    </label>
+    <label>
+        <input type="checkbox" name="restaurant" {% if activity.restaurant %}checked{% endif %}> Restaurant
+    </label>
+    <label>
+        <input type="checkbox" name="bakery"{% if activity.bakery %}checked{% endif %}> Bakery
+    </label>
+    <label>
+        <input type="checkbox" name="activity"{% if activity.activity %}checked{% endif %}> Activity
+    </label>
+    <label>
+        <input type="checkbox" name="adult_ent"{% if activity.adult_ent %}checked{% endif %}> Adult Entertainment
+    </label>
+    <label>
+        <input type="checkbox" name="nightclub"{% if activity.nightclub %}checked{% endif %}> Nightclub
+    </label>
+    <label>
+        <input type="checkbox" name="music_venue"{% if activity.music_venue %}checked{% endif %}> Music Venue
+    </label>
+    <label>
+        <input type="checkbox" name="comedy_club"{% if activity.comedy_club %}checked{% endif %}> Comedy Club
+    </label>
+    <label>
+        <input type="checkbox" name="outdoors"{% if activity.outdoors %}checked{% endif %}> Outdoors
+    </label>
+    <label>
+        <input type="checkbox" name="visited"{% if activity.visited %}checked{% endif %}> Visited
+    </label>
     <button type="submit" class="btn btn-primary">Save Changes</button>
   </form>
 {% endblock %}
