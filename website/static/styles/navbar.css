@@ -1,0 +1,10 @@
+.nav-container {
+  background-color: red;
+  height: 15%;
+}
+@media (max-width: 767px) {
+  .nav-container {
+    background-color: blue;
+    height: 3rem;
+  }
+}/*# sourceMappingURL=navbar.css.map */

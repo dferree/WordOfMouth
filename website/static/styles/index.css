@@ -1,0 +1,9 @@
+.nav-container {
+  background-color: red;
+  height: 50px;
+}
+@media (max-width: 767px) {
+  .nav-container {
+    background-color: blue;
+  }
+}/*# sourceMappingURL=index.css.map */

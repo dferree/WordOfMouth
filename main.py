@@ -1,4 +1,5 @@
 import os
+from flask_scss import Scss
 from website import create_app
 
 # name the database variable with the database file

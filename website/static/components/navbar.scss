@@ -1,0 +1,13 @@
+@import "_include-media.scss";
+
+
+.nav-container {
+    @include media("<tablet"){
+        background-color: blue;
+        height: 3rem;
+    }
+
+    background-color: red;
+    height: 15%;
+    
+}

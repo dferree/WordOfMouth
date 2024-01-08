@@ -14,12 +14,16 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
+    <!-- remove when component styling complete and compiled on index  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/navbar.css') }}">
+    
     <title>{% block title %}Home{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button
+    <nav class="nav-wom">
+      <div class="nav-container"></div>
+      <!-- <button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
@@ -37,7 +41,7 @@
           <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
           {% endif %}
         </div>
-      </div>
+      </div> -->
     </nav>
 
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
