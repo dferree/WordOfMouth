@@ -1,10 +1,10 @@
-.nav-container {
+.nav-wom {
   background-color: red;
   height: 15%;
 }
 @media (max-width: 767px) {
-  .nav-container {
-    background-color: blue;
+  .nav-wom {
+    background-color: #219EBC;
     height: 3rem;
   }
 }/*# sourceMappingURL=navbar.css.map */

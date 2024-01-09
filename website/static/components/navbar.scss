@@ -1,13 +1,19 @@
 @import "_include-media.scss";
 
 
-.nav-container {
+.nav-wom {
     @include media("<tablet"){
-        background-color: blue;
+        background-color: #219EBC;
         height: 3rem;
     }
 
     background-color: red;
     height: 15%;
     
+}
+
+.cat-toggler {
+    @include media("<tablet"){
+        
+    }
 }

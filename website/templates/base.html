@@ -22,26 +22,75 @@
   </head>
   <body>
     <nav class="nav-wom">
-      <div class="nav-container"></div>
-      <!-- <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbar"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar">
-        <div class="navbar-nav">
-          {% if user.is_authenticated %}
-          <a class="nav-item nav-link" id="home" href="/">Home</a>
-          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+      {% if user.is_authenticated %}
+      <div class="cat-toggler">
+        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          category
+        </button>
+       
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {% for activity in user.activities %}
+              {% if activity.nightlife %}
+                <a class="dropdown-item" href="{{ url_for('views.home') + '#nightlife' }}">Nightlife</a>
+              {% endif %}
+              {% if activity.restaurant %}
+                <a class="dropdown-item" href="{{ url_for('views.home') + '#restaurant' }}">Restaurants</a>
+              {% endif %}
+              {% if activity.activity %}
+                <a class="dropdown-item" href="{{ url_for('views.home') + '#activity' }}">Activities</a>
+              {% endif %}
+              {% if activity.adult_ent %}
+                <a class="dropdown-item" href="{{ url_for('views.home') + '#adult_ent-link' }}">Adult Entertainment</a>
+              {% endif %}
+              {% if activity.nightclub %}
+                <a class="dropdown-item" href="{{ url_for('views.home') + '#nightclub' }}">Nightclubs</a>
+              {% endif %}
+              {% if activity.music_venue %}
+                <a class="dropdown-item" href="{{ url_for('views.home') + '#music_venue-link' }}">Music Venues</a>
+              {% endif %}
+              {% if activity.comedy_club %}
+                <a class="dropdown-item" href="{{ url_for('views.home') + '#comedy_club-link' }}">Comedy Clubs</a>
+              {% endif %}
+              {% if activity.outdoors %}
+                <a class="dropdown-item" href="{{ url_for('views.home') + '#outdoors-link' }}">Outdoors</a>
+              {% endif %}
+              {% if activity.visited %}
+                <a class="dropdown-item" href="{{ url_for('views.home') + '#visited-link' }}">Visited</a>
+              {% endif %}
+            {% endfor %}
+          </div>
           {% else %}
-          <a class="nav-item nav-link" id="login" href="/login">Login</a>
-          <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              LogIn/Sign Up
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="nav-item nav-link" id="login" href="/login">Login</a>
+              <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+            </div>
+          </div>
           {% endif %}
+          
+      </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <div class="navbar-nav">
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" id="home" href="/">Home</a>
+            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+            {% else %}
+            <a class="nav-item nav-link" id="login" href="/login">Login</a>
+            <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+            {% endif %}
+          </div>
         </div>
-      </div> -->
     </nav>
 
     {% with messages = get_flashed_messages(with_categories=true) %} {% if

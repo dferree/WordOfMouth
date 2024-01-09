@@ -8,31 +8,49 @@
         <li class="list-group-item">{{ activity.description}}</li>
 
         {% if activity.nightlife %}
+            <a id="nightlife-link">
                 <li class="list-group-item">Nightlife</li>
-            {% endif %}
+            </a>
+        {% endif %}
         {% if activity.restaurant %}
-            <li class="list-group-item">Restaurant</li>
+            <a id="restuarant-link">
+                <li class="list-group-item">Restaurant</li>
+            </a>
         {% endif %}
         {% if activity.activity %}
-            <li class="list-group-item">Activity</li>
+            <a id="activity-link">
+                <li class="list-group-item">Activity</li>
+            </a>
         {% endif %}
         {% if activity.adult_ent %}
-            <li class="list-group-item">Adult Entertainment</li>
+            <a id="adult_ent-link">
+                <li class="list-group-item">Adult Entertainment</li>
+            </a>
         {% endif %}
         {% if activity.nightclub %}
-            <li class="list-group-item">Nightclub</li>
+            <a id="nightclub-link">
+                <li class="list-group-item">Nightclub</li>
+            </a>
         {% endif %}
         {% if activity.music_venue %}
-            <li class="list-group-item">Music Venue</li>
+            <a id="music_venue-link">
+                <li class="list-group-item">Music Venue</li>
+            </a>
         {% endif %}
         {% if activity.comedy_club %}
-            <li class="list-group-item">Comedy Club</li>
+            <a id="comedy_club-link">
+                <li class="list-group-item">Comedy Club</li>
+            </a>
         {% endif %}
         {% if activity.outdoors %}
-            <li class="list-group-item">Outdoors</li>
+            <a id="outdoors-link">
+                <li class="list-group-item">Outdoors</li>
+            </a>
         {% endif %}
         {% if activity.visited %}
-            <li class="list-group-item">Visited</li>
+            <a id="visited-link">
+                <li class="list-group-item">Visited</li>
+            </a>
         {% endif %}
 
         <button type="button" class="close" onClick="deleteActivity({{ activity.id }})">
