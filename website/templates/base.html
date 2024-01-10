@@ -22,13 +22,13 @@
   </head>
   <body>
     <nav class="nav-wom">
-      {% if user.is_authenticated %}
       <div class="cat-toggler">
+        {% if user.is_authenticated %}
         <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           category
         </button>
-       
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             {% for activity in user.activities %}
               {% if activity.nightlife %}
                 <a class="dropdown-item" href="{{ url_for('views.home') + '#nightlife' }}">Nightlife</a>
@@ -59,39 +59,28 @@
               {% endif %}
             {% endfor %}
           </div>
-          {% else %}
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              LogIn/Sign Up
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="nav-item nav-link" id="login" href="/login">Login</a>
-              <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
-            </div>
-          </div>
-          {% endif %}
-          
+        </div>    
+      {% endif %}
       </div>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbar"
-        >
-          <span class="navbar-toggler-icon"></span>
+
+      <div class="nav-navigation">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Navigate
         </button>
-        <div class="collapse navbar-collapse" id="navbar">
-          <div class="navbar-nav">
-            {% if user.is_authenticated %}
-            <a class="nav-item nav-link" id="home" href="/">Home</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {% if user.is_authenticated %}
+            <a class="nav-item nav-link" id="home" href="/">View activities</a>
+            <a class="nav-item nav-link" id="add_activity" href="/add-activity">Add activity</a>
             <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-            {% else %}
+          {% else %}
             <a class="nav-item nav-link" id="login" href="/login">Login</a>
             <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
-            {% endif %}
-          </div>
+          {% endif %}
         </div>
-    </nav>
+      </div>
+    
+     </button>
+  </nav>
 
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %} {% if category ==

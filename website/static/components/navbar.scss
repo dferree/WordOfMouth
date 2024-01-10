@@ -5,15 +5,22 @@
     @include media("<tablet"){
         background-color: #219EBC;
         height: 3rem;
+        display: flex;
+        justify-content: space-between;
     }
-
+    display: flex;
     background-color: red;
     height: 15%;
-    
+    justify-content: space-between;
+    align-items: center;
 }
 
+.nav-navigation {
+
+}
 .cat-toggler {
     @include media("<tablet"){
         
     }
 }
+

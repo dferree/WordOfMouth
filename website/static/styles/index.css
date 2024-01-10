@@ -1,11 +1,12 @@
-.nav-container {
+.nav-wom {
   background-color: red;
   height: 15%;
 }
 @media (max-width: 767px) {
-  .nav-container {
+  .nav-wom {
     background-color: #219EBC;
     height: 3rem;
+    justify-content: space-between;
   }
 }
 
