@@ -18,7 +18,6 @@ class User(db.Model, UserMixin):
     activities = db.Relationship('Activity')
     reviews = db.Relationship('Review')
     
-    
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150))

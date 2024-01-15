@@ -1,0 +1,30 @@
+@import "_include-media.scss";
+
+.category-card {
+    @include media("<tablet"){
+        background-color: #FFB703;
+        .category-card-title{
+            background-color: #FB8500;
+        }
+        .activity-title{
+            
+        }
+        
+        .activity-type{
+            
+        }
+        
+        .activity-description{
+            
+        }
+    }
+    .activity-card {
+        background-color: red;
+    }
+    .activity-title{
+        background-color: aqua;
+            
+    }
+    margin-bottom: 2rem;
+}
+

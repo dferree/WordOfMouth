@@ -1,12 +1,28 @@
 .nav-wom {
+  display: flex;
   background-color: red;
   height: 15%;
+  justify-content: space-between;
+  align-items: center;
 }
 @media (max-width: 767px) {
   .nav-wom {
     background-color: #219EBC;
     height: 3rem;
+    display: flex;
     justify-content: space-between;
+  }
+}
+
+.category-card {
+  margin-bottom: 5rem;
+}
+@media (max-width: 767px) {
+  .category-card {
+    background-color: #FFB703;
+  }
+  .category-card .category-card-title {
+    background-color: #FB8500;
   }
 }
 

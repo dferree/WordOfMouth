@@ -1,0 +1,17 @@
+.category-card {
+  margin-bottom: 2rem;
+}
+@media (max-width: 767px) {
+  .category-card {
+    background-color: #FFB703;
+  }
+  .category-card .category-card-title {
+    background-color: #FB8500;
+  }
+}
+.category-card .activity-card {
+  background-color: red;
+}
+.category-card .activity-title {
+  background-color: aqua;
+}/*# sourceMappingURL=activity-card.css.map */

@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 from werkzeug.exceptions import abort
-from .models import Activity
+from .models import Activity, User
 from . import db
 import json
 
