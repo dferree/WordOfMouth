@@ -1,21 +1,61 @@
 .nav-wom {
+  height: 5rem;
   display: flex;
   background-color: red;
-  height: 15%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 @media (max-width: 767px) {
   .nav-wom {
     background-color: #219EBC;
-    height: 3rem;
-    display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 
+.nav-logo-btn {
+  background: url("/static/media/nav-button-phone.svg");
+  background-position: center;
+  background-size: contain; /* or background-size: cover; */
+  border: none;
+}
+@media (max-width: 767px) {
+  .nav-logo-btn {
+    width: 51px;
+    height: 40px;
+  }
+}
+
+.nav-menu {
+  margin-left: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+.nav-menu .bar1, .nav-menu .bar2, .nav-menu .bar3 {
+  width: 41px;
+  height: 9.6px;
+  background-color: #023047;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+.nav-menu .change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+.nav-menu .change .bar2 {
+  opacity: 0;
+}
+.nav-menu .change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.nav-menu-button {
+  background: none;
+  border: none;
+}
+
 .category-card {
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 @media (max-width: 767px) {
   .category-card {
@@ -25,7 +65,36 @@
     background-color: #FB8500;
   }
 }
+.category-card .activity-card {
+  background-color: red;
+}
+.category-card .activity-title {
+  background-color: aqua;
+}
 
 body {
   background-color: #F5EBE0;
+  color: #023047;
+}
+
+html {
+  font-size: 16px;
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+  html h1 {
+    font-size: 2.5rem;
+  }
+  html h2 {
+    font-size: 2rem;
+  }
+  html h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+  html h4 {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=index.css.map */

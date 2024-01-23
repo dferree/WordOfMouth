@@ -8,10 +8,19 @@ import json
 
 views = Blueprint('views', __name__)
 
-# allow home page to run get and post methods 
-@views.route('/', methods=['GET', 'POST'])
-@login_required
+@views.route('/', methods=['GET'])
 def home():
+    if current_user.is_authenticated:
+        return render_template("home.html", user=current_user)
+    else:
+        return render_template("home.html", user=None)
+
+
+
+# allow activities page to run get and post methods 
+@views.route('/activities', methods=['GET', 'POST'])
+@login_required
+def activities():
     filtered_activities= []
     if request.method == 'POST':
         # Your existing code for adding a new activity
@@ -32,7 +41,7 @@ def home():
         )
     ).all()
 
-    return render_template("home.html", user=current_user, activities=filtered_activities)
+    return render_template("activities.html", user=current_user, activities=filtered_activities)
 
 
 @views.route('/add-activity', methods=['GET','POST'])
@@ -77,8 +86,8 @@ def add_activity():
             db.session.commit()
             flash('Activity added!', category='success')
 
-        # Redirect to the home page after adding an activity
-        return render_template("home.html", user=current_user)
+        # Redirect to the activities page after adding an activity
+        return render_template("activities.html", user=current_user)
 
     # Handle the case where the request method is GET (e.g., displaying the form)
     return render_template("add_activity.html", user=current_user)
@@ -138,6 +147,6 @@ def edit_activity(activity_id):
 
         db.session.commit()
         flash('Activity updated successfully!', category='success')
-        return render_template("home.html", user=current_user)
+        return render_template("activities.html", user=current_user)
 
     return render_template("edit_activity.html", user=current_user, activity=activity_to_edit)

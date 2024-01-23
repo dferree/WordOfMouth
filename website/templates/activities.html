@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %} Activities {% endblock %}
+
+{% block content %}
+<h1 align="center">Activities</h1>
+<ul class="list-group list-group-flush" id="activities">
+    {% set categories = ['nightlife', 'restaurant', 'bakery', 'activity', 'adult_ent', 'nightclub', 'music_venue', 'comedy_club', 'outdoors', 'visited'] %}
+
+    {% for category in categories %}
+        {% set category_activities = user.activities|selectattr(category, 'equalto', true)|list %}
+        {% if category_activities %}
+            <div class="category-card">
+                <a id="{{ category }}-link"></a>
+                <div class="category-card-title"><h2>{{ category.capitalize() }}</h2></div>
+                {% for activity in category_activities %}
+                    <div class="activity-card">
+                        <div class="activity-title"><h3>{{ activity.title }}</h3></div>
+                        <div class="activity-type">
+                            {# Display other activity types as needed #}
+                        </div>
+                        <div class="activity-descritption"><p>{{ activity.description }}</p></div>
+                        <button type="button" class="close" onClick="deleteActivity({{ activity.id }})">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <a href="{{ url_for('views.edit_activity', activity_id=activity.id) }}">
+                            <span class="badge badge-warning">Edit</span>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('views.add_activity') }}">
+    <span class="badge badge-warning">Add activity</span>
+</a>
+{% endblock %}

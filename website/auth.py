@@ -19,7 +19,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in succesfully!', category="success")
                 login_user(user, remember=True)
-                return redirect(url_for('views.home'))
+                return redirect(url_for('views.activities'))
             else:
                 flash("Password incorrect, try again.", category='error')
         else:
@@ -31,7 +31,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('views.home'))
     
 @auth.route('/sign-up', methods = ['GET', 'POST'])
 def sign_up():
@@ -64,6 +64,6 @@ def sign_up():
                 # perform flask_login login_user function
                 login_user(new_user, remember=True)
                 flash("Account created!", category='success')
-                return redirect(url_for('views.home'))
+                return redirect(url_for('views.activities'))
             
     return render_template("sign_up.html", user=current_user)

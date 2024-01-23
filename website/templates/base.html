@@ -24,62 +24,66 @@
     <nav class="nav-wom">
       <div class="cat-toggler">
         {% if user.is_authenticated %}
-        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          category
+        <button class="nav-logo-btn" type="button" id="cat-dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         </button>
         
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            {% for activity in user.activities %}
-              {% if activity.nightlife %}
-                <a class="dropdown-item" href="{{ url_for('views.home') + '#nightlife' }}">Nightlife</a>
+        <div class="dropdown-menu" aria-labelledby="cat-dropdownMenuButton">
+          {% if user.activities %}
+              {% if user.activities|selectattr('nightlife', 'equalto', true)|list %}
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightlife-link' }}">Nightlife</a>
               {% endif %}
-              {% if activity.restaurant %}
-                <a class="dropdown-item" href="{{ url_for('views.home') + '#restaurant' }}">Restaurants</a>
+              {% if user.activities|selectattr('restaurant', 'equalto', true)|list %}
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#restaurant-link' }}">Restaurants</a>
               {% endif %}
-              {% if activity.activity %}
-                <a class="dropdown-item" href="{{ url_for('views.home') + '#activity' }}">Activities</a>
+              {% if user.activities|selectattr('activity', 'equalto', true)|list %}
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#activity-link' }}">Activities</a>
               {% endif %}
-              {% if activity.adult_ent %}
-                <a class="dropdown-item" href="{{ url_for('views.home') + '#adult_ent-link' }}">Adult Entertainment</a>
+              {% if user.activities|selectattr('bakery', 'equalto', true)|list %}
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#bakery-link' }}">Bakeries</a>
               {% endif %}
-              {% if activity.nightclub %}
-                <a class="dropdown-item" href="{{ url_for('views.home') + '#nightclub' }}">Nightclubs</a>
+              {% if user.activities|selectattr('adult_ent', 'equalto', true)|list %}
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#adult_ent-link' }}">Adult Entertainment</a>
               {% endif %}
-              {% if activity.music_venue %}
-                <a class="dropdown-item" href="{{ url_for('views.home') + '#music_venue-link' }}">Music Venues</a>
+              {% if user.activities|selectattr('nightclub', 'equalto', true)|list %}
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightclub-link' }}">Nightclubs</a>
               {% endif %}
-              {% if activity.comedy_club %}
-                <a class="dropdown-item" href="{{ url_for('views.home') + '#comedy_club-link' }}">Comedy Clubs</a>
+              {% if user.activities|selectattr('music_venue', 'equalto', true)|list %}
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#music_venue-link' }}">Music Venues</a>
               {% endif %}
-              {% if activity.outdoors %}
-                <a class="dropdown-item" href="{{ url_for('views.home') + '#outdoors-link' }}">Outdoors</a>
+              {% if user.activities|selectattr('comedy_club', 'equalto', true)|list %}
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#comedy_club-link' }}">Comedy Clubs</a>
               {% endif %}
-              {% if activity.visited %}
-                <a class="dropdown-item" href="{{ url_for('views.home') + '#visited-link' }}">Visited</a>
+              {% if user.activities|selectattr('outdoors', 'equalto', true)|list %}
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#outdoors-link' }}">Outdoors</a>
               {% endif %}
-            {% endfor %}
-          </div>
-        </div>    
-      {% endif %}
-      </div>
-
-      <div class="nav-navigation">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Navigate
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          {% if user.is_authenticated %}
-            <a class="nav-item nav-link" id="home" href="/">View activities</a>
-            <a class="nav-item nav-link" id="add_activity" href="/add-activity">Add activity</a>
-            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-          {% else %}
-            <a class="nav-item nav-link" id="login" href="/login">Login</a>
-            <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+              {% if user.activities|selectattr('visited', 'equalto', true)|list %}
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#visited-link' }}">Visited</a>
+              {% endif %}
           {% endif %}
         </div>
-      </div>
+      </div>    
+      {% endif %}
+      <div> <h3> Word of Mouth </h3></div>
+
+      <div class="nav-menu-button">
+        <div class="nav-menu" onclick="menuChange(this)" type="button" id="nav-dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+
+        <div class="dropdown-menu" aria-labelledby="nav-dropdownMenuButton">
+          {% if user.is_authenticated %}
+          <a class="nav-item nav-link" id="home" href="/activities">View activities</a>
+          <a class="nav-item nav-link" id="add_activity" href="/add-activity">Add activity</a>
+          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
+          {% else %}
+          <a class="nav-item nav-link" id="login" href="/login">Login</a>
+          <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+          {% endif %}
+        </div>
     
-     </button>
+    </div>
   </nav>
 
     {% with messages = get_flashed_messages(with_categories=true) %} {% if

@@ -6,3 +6,7 @@ function deleteActivity(activityId) {
         window.location.href = "/";
     });
 }
+
+function menuChange(x) {
+    x.classList.toggle("change");
+  }

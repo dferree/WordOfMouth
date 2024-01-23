@@ -1,15 +1,61 @@
 .nav-wom {
+  height: 5rem;
   display: flex;
   background-color: red;
-  height: 15%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 @media (max-width: 767px) {
   .nav-wom {
     background-color: #219EBC;
-    height: 3rem;
-    display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
   }
+}
+
+.nav-logo-btn {
+  background: url("/static/media/nav-button-phone.svg");
+  background-position: center;
+  background-size: contain; /* or background-size: cover; */
+  border: none;
+}
+@media (max-width: 767px) {
+  .nav-logo-btn {
+    width: 51px;
+    height: 40px;
+  }
+}
+
+.nav-logo-btn:focus,
+.nav-logo-btn:active {
+  outline: none;
+  border: none; /* Add this to remove any border as well */
+}
+
+.nav-menu-button {
+  display: inline-block;
+  cursor: pointer;
+}
+.nav-menu-button .bar1, .nav-menu-button .bar2, .nav-menu-button .bar3 {
+  width: 41px;
+  height: 9.6px;
+  background-color: #023047;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+.nav-menu-button .change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+.nav-menu-button .change .bar2 {
+  opacity: 0;
+}
+.nav-menu-button .change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.nav-menu-button:focus,
+.nav-menu-button:active {
+  outline: none;
+  border: none; /* Add this to remove any border as well */
 }/*# sourceMappingURL=navbar.css.map */
