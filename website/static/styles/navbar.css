@@ -58,4 +58,14 @@
 .nav-menu-button:active {
   outline: none;
   border: none; /* Add this to remove any border as well */
+}
+
+.dropdown-menu {
+  background-color: #219EBC;
+}
+
+.dropdown-divider {
+  border-top: 1px;
+  border: solid;
+  border-top: #023047;
 }/*# sourceMappingURL=navbar.css.map */

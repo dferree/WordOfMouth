@@ -26,12 +26,17 @@
   }
 }
 
-.nav-menu {
-  margin-left: 15px;
+.nav-logo-btn:focus,
+.nav-logo-btn:active {
+  outline: none;
+  border: none; /* Add this to remove any border as well */
+}
+
+.nav-menu-button {
   display: inline-block;
   cursor: pointer;
 }
-.nav-menu .bar1, .nav-menu .bar2, .nav-menu .bar3 {
+.nav-menu-button .bar1, .nav-menu-button .bar2, .nav-menu-button .bar3 {
   width: 41px;
   height: 9.6px;
   background-color: #023047;
@@ -39,19 +44,30 @@
   transition: 0.4s;
   border-radius: 20px;
 }
-.nav-menu .change .bar1 {
+.nav-menu-button .change .bar1 {
   transform: translate(0, 11px) rotate(-45deg);
 }
-.nav-menu .change .bar2 {
+.nav-menu-button .change .bar2 {
   opacity: 0;
 }
-.nav-menu .change .bar3 {
+.nav-menu-button .change .bar3 {
   transform: translate(0, -11px) rotate(45deg);
 }
 
-.nav-menu-button {
-  background: none;
-  border: none;
+.nav-menu-button:focus,
+.nav-menu-button:active {
+  outline: none;
+  border: none; /* Add this to remove any border as well */
+}
+
+.dropdown-menu {
+  background-color: #219EBC;
+}
+
+.dropdown-divider {
+  border-top: 1px;
+  border: solid;
+  border-top: #023047;
 }
 
 .category-card {
