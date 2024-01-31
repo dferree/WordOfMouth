@@ -3,14 +3,60 @@
 {% block content %}
 <h1 align="center">Activities</h1>
 <ul class="list-group list-group-flush" id="activities">
-    {% set categories = ['nightlife', 'restaurant', 'bakery', 'activity', 'adult_ent', 'nightclub', 'music_venue', 'comedy_club', 'outdoors', 'visited'] %}
+    {% set categories = {
+        'nightlife': 'mob-nightlife-icon.svg',
+        'restaurant': 'mob-restaurant-icon.svg',
+        'bakery': 'mob-bakery-icon.svg',
+        'activity': 'mob-activity-icon.svg',
+        'adult_ent': 'mob-adult-ent-icon.svg',
+        'nightclub': 'mob-nightclub-icon.svg',
+        'music_venue': 'mob-music-venue-icon.svg',
+        'comedy_club': 'mob-comedy-club-icon.svg',
+        'outdoors': 'mob-outdoors-icon.svg',
+        'visited': 'mob-visited-icon.svg'
+    } %}
+
 
     {% for category in categories %}
         {% set category_activities = user.activities|selectattr(category, 'equalto', true)|list %}
         {% if category_activities %}
-            <div class="category-card">
-                <a id="{{ category }}-link"></a>
+        <div class="category-card">
+            <a id="{{ category }}-link"></a>
+            <div class="category-heading">
+                <div class="category-icon">
+                    <img src="/static/media/category-icons/{{ categories[category] }}" alt="">
+                </div>
                 <div class="category-card-title"><h2>{{ category.capitalize() }}</h2></div>
+                <div class="drop-arrow" onclick="toggleDropdown('{{ category }}')"></div>
+            
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for activity in category_activities %}
+                    <div class="activity-card">
+                        <div class="activity-title"><h3>{{ activity.title }}</h3></div>
+                        <div class="activity-type">
+                            {# Display other activity types as needed #}
+                        </div>
+                        <div class="activity-descritption"><p>{{ activity.description }}</p></div>
+                        <div class="icon-edit-delete">
+                            <img src="/static/media/category-icons/{{ categories[category] }}" alt="">
+                            <button type="button" class="close" onClick="deleteActivity({{ activity.id }})">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <a href="{{ url_for('views.edit_activity', activity_id=activity.id) }}">
+                                <span class="badge badge-warning">Edit</span>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>    
+              </div>
+            <!-- <div class="dropdown-content" id="{{ category }}-dropdown">
                 {% for activity in category_activities %}
                     <div class="activity-card">
                         <div class="activity-title"><h3>{{ activity.title }}</h3></div>
@@ -18,18 +64,26 @@
                             {# Display other activity types as needed #}
                         </div>
                         <div class="activity-descritption"><p>{{ activity.description }}</p></div>
-                        <button type="button" class="close" onClick="deleteActivity({{ activity.id }})">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <a href="{{ url_for('views.edit_activity', activity_id=activity.id) }}">
-                            <span class="badge badge-warning">Edit</span>
-                        </a>
+                        <div class="icon-edit-delete">
+                            <img src="/static/media/category-icons/{{ categories[category] }}" alt="">
+                            <button type="button" class="close" onClick="deleteActivity({{ activity.id }})">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <a href="{{ url_for('views.edit_activity', activity_id=activity.id) }}">
+                                <span class="badge badge-warning">Edit</span>
+                            </a>
+                        </div>
                     </div>
                 {% endfor %}
-            </div>
+            </div> -->
+        </div>
+        
         {% endif %}
     {% endfor %}
 </ul>
+
+
+
 
 <a href="{{ url_for('views.add_activity') }}">
     <span class="badge badge-warning">Add activity</span>

@@ -5,7 +5,7 @@
     <div class="home-greeting"><h2 align="center"> Welcome to Word of Mouth!</h2></div>
     <div class="home-actions">
     {% if user.is_authenticated %}
-        <h2 align="center"> Welcome, {{ user.username }}!</h2>
+        <h2 align="center"> Welcome, {{ user.first_name }}!</h2>
         <a href="/activities"><h3 align="center">Go to activities</h3></a>
     {% else %}
         <a id="signUp" href="/sign-up"><h3 align="center"> New here?</h3> <h4 align="center">Read more and register</h4></a>

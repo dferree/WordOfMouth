@@ -1,29 +1,58 @@
 @import "_include-media.scss";
 
 .category-card {
+    border-radius: 20px;
+    background-color: #FFB703;
+    margin-bottom: 2rem;
+    
+    .dropdown-menu{
+        width: 200px;
+    }
+    .activity-card {
+        background-color:#FB8500;
+        margin: 10px;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    .activity-title{
+        background-color:#FB8500;
+        border-radius: 20px;    
+    }
+    .category-heading{
+        background-color: #FB8500;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        height: 44px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .category-icon{
+        align-self: center;
+    }
+
+    .category-card-title{
+        background-color: #FB8500;
+    }
+
     @include media("<tablet"){
         background-color: #FFB703;
         .category-card-title{
-            background-color: #FB8500;
+            align-self: center;
         }
         .activity-title{
             
         }
         
         .activity-type{
+            background-color: #FFB703;
             
         }
         
         .activity-description{
+            background-color: #FFB703;
             
         }
-    }
-    .activity-card {
-        background-color: red;
-    }
-    .activity-title{
-        background-color: aqua;
-            
     }
     margin-bottom: 2rem;
 }
