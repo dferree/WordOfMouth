@@ -1,39 +1,43 @@
-.category-card {
-  border-radius: 20px;
-  background-color: #FFB703;
-  margin-bottom: 2rem;
-  margin-bottom: 2rem;
-}
-.category-card .dropdown-menu {
-  width: 200px;
-}
-.category-card .activity-card {
-  background-color: #FB8500;
-  margin: 10px;
-  border-radius: 20px;
-  padding: 10px;
-}
-.category-card .activity-title {
-  background-color: #FB8500;
-  border-radius: 20px;
-}
-.category-card .category-heading {
-  background-color: #FB8500;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  height: 44px;
-  display: flex;
-  justify-content: space-evenly;
-}
-.category-card .category-icon {
-  align-self: center;
-}
-.category-card .category-card-title {
-  background-color: #FB8500;
-}
 @media (max-width: 767px) {
   .category-card {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     background-color: #FFB703;
+    margin-bottom: 2rem;
+    width: 320px;
+    background-color: #FFB703;
+    /* Apply border-radius change based on whether dropdown is expanded */
+  }
+  .category-card .activity-card {
+    background-color: #FB8500;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  .category-card .activity-title {
+    background-color: #FB8500;
+    border-radius: 20px;
+    width: 280px;
+  }
+  .category-card .category-heading {
+    background-color: #FB8500;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-radius: 20px;
+    height: 44px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .category-card .category-icon {
+    align-self: center;
+  }
+  .category-card .category-card-title {
+    background-color: #FB8500;
+  }
+  .category-card .category-card-title h2 {
+    margin-bottom: 0%;
   }
   .category-card .category-card-title {
     align-self: center;
@@ -43,5 +47,18 @@
   }
   .category-card .activity-description {
     background-color: #FFB703;
+  }
+  .category-card .dropdown-content {
+    display: none;
+  }
+  .category-card .dropdown-content.expanded {
+    display: block;
+  }
+  .category-card .dropdown-content.expanded ~ .category-heading {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .category-card .expand-btn {
+    display: flex;
   }
 }/*# sourceMappingURL=activity-card.css.map */

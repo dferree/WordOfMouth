@@ -71,21 +71,51 @@
 }
 
 .category-card {
+  border-radius: 20px;
+  background-color: #FFB703;
   margin-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+.category-card .dropdown-menu {
+  width: 200px;
+}
+.category-card .activity-card {
+  background-color: #FB8500;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 10px;
+}
+.category-card .activity-title {
+  background-color: #FB8500;
+  border-radius: 20px;
+}
+.category-card .category-heading {
+  background-color: #FB8500;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  height: 44px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.category-card .category-icon {
+  align-self: center;
+}
+.category-card .category-card-title {
+  background-color: #FB8500;
 }
 @media (max-width: 767px) {
   .category-card {
     background-color: #FFB703;
   }
   .category-card .category-card-title {
-    background-color: #FB8500;
+    align-self: center;
   }
-}
-.category-card .activity-card {
-  background-color: red;
-}
-.category-card .activity-title {
-  background-color: aqua;
+  .category-card .activity-type {
+    background-color: #FFB703;
+  }
+  .category-card .activity-description {
+    background-color: #FFB703;
+  }
 }
 
 @media (max-width: 767px) {
@@ -110,6 +140,41 @@
     margin-bottom: 10px;
   }
 }
+.form-container {
+  background-color: #FFB703;
+  width: 90%;
+  margin-top: 25px;
+  border-radius: 20px;
+  padding: 5% 5% 0% 5%;
+}
+.form-container h3 {
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+.form-container label {
+  font-size: 16px;
+}
+.form-container .form-control {
+  background: #FDA138;
+  border-radius: 20px;
+  height: 40px;
+  border-color: #023047;
+}
+.form-container .btn-primary {
+  border-radius: 20px;
+  height: 40px;
+  font-size: 16px;
+  background-color: #FDA138;
+  color: #023047;
+  padding: 5%;
+  line-height: 10px; /* Match the height of the button */
+  display: flex;
+  justify-content: center;
+}
+.form-container .already {
+  margin-top: 5%;
+}
+
 body {
   background-color: #F5EBE0;
   color: #023047;

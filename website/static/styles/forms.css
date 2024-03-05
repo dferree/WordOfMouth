@@ -1,5 +1,5 @@
 .form-container {
-  background-color: #FFB703;
+  background-color: #1cbb41;
   width: 90%;
   margin-top: 5%;
   border-radius: 20px;
@@ -33,13 +33,6 @@
   margin-top: 5%;
 }
 .form-container .silly-container {
-  margin-top: 5%;
   display: flex;
   flex-wrap: wrap;
-  align-content: stretch;
-  justify-content: space-evenly;
-}
-.form-container .form-check-input {
-  position: relative;
-  color: #023047;
-}/*# sourceMappingURL=sign_up.css.map */
+}/*# sourceMappingURL=forms.css.map */

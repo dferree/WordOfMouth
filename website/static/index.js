@@ -24,3 +24,18 @@ window.onclick = function(event) {
         }
     }
 }
+
+
+function menuChange(x) {
+    x.classList.toggle("change");
+  }
+
+  document.querySelectorAll('.expand-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        const dropdown = document.getElementById(`${category}-dropdown`);
+        if (dropdown) {
+            dropdown.classList.toggle('expanded');
+        }
+    });
+});

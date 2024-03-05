@@ -1,13 +1,15 @@
 @import "_include-media.scss";
 
 .category-card {
-    border-radius: 20px;
+    @include media("<tablet"){
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     background-color: #FFB703;
     margin-bottom: 2rem;
-    
-    .dropdown-menu{
-        width: 200px;
-    }
+    width: 320px;
+   
     .activity-card {
         background-color:#FB8500;
         margin: 10px;
@@ -16,12 +18,14 @@
     }
     .activity-title{
         background-color:#FB8500;
-        border-radius: 20px;    
+        border-radius: 20px; 
+        width: 280px;   
     }
     .category-heading{
         background-color: #FB8500;
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
+        border-radius:20px;
         height: 44px;
         display: flex;
         justify-content: space-evenly;
@@ -35,25 +39,41 @@
         background-color: #FB8500;
     }
 
-    @include media("<tablet"){
-        background-color: #FFB703;
-        .category-card-title{
-            align-self: center;
-        }
-        .activity-title{
-            
-        }
-        
-        .activity-type{
-            background-color: #FFB703;
-            
-        }
-        
-        .activity-description{
-            background-color: #FFB703;
-            
-        }
+    .category-card-title h2{
+        margin-bottom: 0%;
     }
-    margin-bottom: 2rem;
-}
 
+    background-color: #FFB703;
+    .category-card-title{
+        align-self: center;
+    }
+    
+    .activity-type{
+        background-color: #FFB703;
+        
+    }
+    
+    .activity-description{
+        background-color: #FFB703;
+        
+    }
+    .dropdown-content {
+        display: none;
+    }
+
+    .dropdown-content.expanded{
+        display: block;
+    }
+
+    /* Apply border-radius change based on whether dropdown is expanded */
+    .dropdown-content.expanded ~ .category-heading {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+
+    .expand-btn{
+        display: flex;
+    }
+}
+}
