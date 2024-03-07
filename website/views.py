@@ -104,8 +104,7 @@ def delete_activity():
     if activity_to_delete and activity_to_delete.user_id == current_user.id:
         db.session.delete(activity_to_delete)
         db.session.commit()
-        
-    return jsonify({})
+    return render_template("activities.html", user=current_user)
 
 @views.route('/edit-activity/<int:activity_id>', methods=['GET', 'POST'])
 @login_required

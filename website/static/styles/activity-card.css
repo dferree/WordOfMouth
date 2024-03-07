@@ -1,20 +1,20 @@
-@media (max-width: 767px) {
+@media (min-width: 1024px) {
   .category-card {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 20px;
     background-color: #FFB703;
     margin-bottom: 2rem;
-    width: 320px;
-    background-color: #FFB703;
-    /* Apply border-radius change based on whether dropdown is expanded */
+    width: 1000px;
+  }
+  .category-card .container-activities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .category-card .activity-card {
     background-color: #FB8500;
-    margin: 10px;
+    margin: 1em;
     border-radius: 20px;
-    padding: 10px;
+    padding: 1em;
   }
   .category-card .activity-title {
     background-color: #FB8500;
@@ -23,8 +23,6 @@
   }
   .category-card .category-heading {
     background-color: #FB8500;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
     border-radius: 20px;
     height: 44px;
     display: flex;
@@ -35,18 +33,36 @@
   }
   .category-card .category-card-title {
     background-color: #FB8500;
+    align-self: center;
   }
   .category-card .category-card-title h2 {
     margin-bottom: 0%;
   }
-  .category-card .category-card-title {
-    align-self: center;
-  }
   .category-card .activity-type {
-    background-color: #FFB703;
+    background-color: #FB8500;
   }
   .category-card .activity-description {
-    background-color: #FFB703;
+    background-color: #fc9c00;
+    border-radius: 5px;
+    padding: 1em;
+    overflow: hidden;
+    position: relative;
+    margin: 5px;
+  }
+  .category-card .activity-description .full {
+    display: none;
+  }
+  .category-card .show-more {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+    cursor: pointer;
+  }
+  .category-card .activity-description.expanded .full {
+    display: block;
+  }
+  .category-card .activity-description.expanded .initial {
+    display: none;
   }
   .category-card .dropdown-content {
     display: none;
@@ -60,5 +76,90 @@
   }
   .category-card .expand-btn {
     display: flex;
+  }
+}
+@media (max-width: 1023px) {
+  .category-card {
+    width: 700px;
+  }
+  .category-card .container-activities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .category-card .activity-card {
+    background-color: #FB8500;
+    margin: 1em;
+    border-radius: 20px;
+    padding: 1em;
+  }
+  .category-card .activity-title {
+    background-color: #FB8500;
+    border-radius: 20px;
+    width: 280px;
+  }
+  .category-card .category-heading {
+    background-color: #FB8500;
+    border-radius: 20px;
+    height: 44px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .category-card .category-icon {
+    align-self: center;
+  }
+  .category-card .category-card-title {
+    background-color: #FB8500;
+    align-self: center;
+  }
+  .category-card .category-card-title h2 {
+    margin-bottom: 0%;
+  }
+  .category-card .activity-type {
+    background-color: #FB8500;
+  }
+  .category-card .activity-description {
+    background-color: #fc9c00;
+    border-radius: 5px;
+    padding: 1em;
+    overflow: hidden;
+    position: relative;
+    margin: 5px;
+  }
+  .category-card .activity-description .full {
+    display: none;
+  }
+  .category-card .show-more {
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
+    cursor: pointer;
+  }
+  .category-card .activity-description.expanded .full {
+    display: block;
+  }
+  .category-card .activity-description.expanded .initial {
+    display: none;
+  }
+  .category-card .dropdown-content {
+    display: none;
+  }
+  .category-card .dropdown-content.expanded {
+    display: block;
+  }
+  .category-card .dropdown-content.expanded ~ .category-heading {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .category-card .expand-btn {
+    display: flex;
+  }
+}
+@media (max-width: 767px) {
+  .category-card {
+    border-radius: 20px;
+    background-color: #FFB703;
+    margin-bottom: 2rem;
+    width: 320px;
   }
 }/*# sourceMappingURL=activity-card.css.map */

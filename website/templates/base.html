@@ -23,6 +23,8 @@
     <title>{% block title %}Home{% endblock %}</title>
   </head>
   <body>
+    <script src="https://kit.fontawesome.com/af746f2538.js" crossorigin="anonymous"></script>
+
     <nav class="nav-wom">
       <div class="cat-toggler">
         <button class="nav-logo-btn" type="button" id="cat-dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,34 +33,34 @@
           {% if user.is_authenticated %}
           {% if user.activities %}
               {% if user.activities|selectattr('nightlife', 'equalto', true)|list %}
-                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightlife-link' }}">Nightlife</a>
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightlife-link' }}"> <h2>Nightlife</h2></a>
               {% endif %}
               {% if user.activities|selectattr('restaurant', 'equalto', true)|list %}
-                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#restaurant-link' }}">Restaurants</a>
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#restaurant-link' }}"><h2>Restaurants</h2></a>
               {% endif %}
               {% if user.activities|selectattr('activity', 'equalto', true)|list %}
-                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#activity-link' }}">Activities</a>
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#activity-link' }}"><h2>Activities</h2></a>
               {% endif %}
               {% if user.activities|selectattr('bakery', 'equalto', true)|list %}
-                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#bakery-link' }}">Bakeries</a>
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#bakery-link' }}"><h2>Bakeries</h2></a>
               {% endif %}
               {% if user.activities|selectattr('adult_ent', 'equalto', true)|list %}
-                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#adult_ent-link' }}">Adult Entertainment</a>
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#adult_ent-link' }}"><h2>Adult Entertainment</h2></a>
               {% endif %}
               {% if user.activities|selectattr('nightclub', 'equalto', true)|list %}
-                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightclub-link' }}">Nightclubs</a>
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightclub-link' }}"><h2>Nightclubs</h2></a>
               {% endif %}
               {% if user.activities|selectattr('music_venue', 'equalto', true)|list %}
-                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#music_venue-link' }}">Music Venues</a>
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#music_venue-link' }}"><h2>Music Venues</h2></a>
               {% endif %}
               {% if user.activities|selectattr('comedy_club', 'equalto', true)|list %}
-                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#comedy_club-link' }}">Comedy Clubs</a>
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#comedy_club-link' }}"><h2>Comedy Clubs</h2></a>
               {% endif %}
               {% if user.activities|selectattr('outdoors', 'equalto', true)|list %}
-                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#outdoors-link' }}">Outdoors</a>
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#outdoors-link' }}"><h2>Outdoors</h2></a>
               {% endif %}
               {% if user.activities|selectattr('visited', 'equalto', true)|list %}
-                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#visited-link' }}">Visited</a>
+                  <a class="dropdown-item" href="{{ url_for('views.activities') + '#visited-link' }}"><h2>Visited</h2></a>
               {% endif %}
             {% endif %}
           {% else %}
@@ -67,7 +69,7 @@
         </div>
       </div>
 
-      <div> <h3> Word of Mouth </h3></div>
+      <div> <h1> Word of Mouth </h1></div>
 
       <div class="nav-menu-button">
         <div class="nav-menu" onclick="menuChange(this)" type="button" id="nav-dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -125,11 +127,9 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script src="https://kit.fontawesome.com/af746f2538.js" crossorigin="anonymous"></script>
-
     <script
       type="text/javascript"
       src="{{ url_for ('static', filename='index.js') }}"
-      ></script>
+    ></script>
   </body>
 </html>

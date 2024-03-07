@@ -1,35 +1,56 @@
 .nav-wom {
-  height: 5rem;
-  display: flex;
-  background-color: red;
   justify-content: space-around;
   align-items: center;
+  display: flex;
+  background-color: #219EBC;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s ease;
+  z-index: 1000;
 }
-@media (max-width: 767px) {
+.nav-wom h4 {
+  font-size: 16px;
+}
+@media (max-width: 320px) {
   .nav-wom {
-    background-color: #219EBC;
+    height: 5rem;
     justify-content: space-around;
     align-items: center;
   }
 }
+@media (min-width: 768px) {
+  .nav-wom {
+    height: 85px;
+  }
+}
 
 .nav-logo-btn {
-  background: url("/static/media/nav-button-phone.svg");
   background-position: center;
-  background-size: contain; /* or background-size: cover; */
+  background-size: contain;
   border: none;
+  padding: 0;
 }
 @media (max-width: 767px) {
   .nav-logo-btn {
-    width: 51px;
-    height: 40px;
+    width: 54px;
+    height: 43px;
+    background: url("/static/media/nav-button-phone.svg");
+  }
+}
+@media (min-width: 768px) {
+  .nav-logo-btn {
+    background: url("/static/media/nav-button-tablet.svg");
+    width: 76px;
+    height: 60px;
   }
 }
 
 .nav-logo-btn:focus,
 .nav-logo-btn:active {
   outline: none;
-  border: none; /* Add this to remove any border as well */
+  border: none;
 }
 
 .nav-menu-button {
@@ -57,7 +78,7 @@
 .nav-menu-button:focus,
 .nav-menu-button:active {
   outline: none;
-  border: none; /* Add this to remove any border as well */
+  border: none;
 }
 
 .dropdown-menu {
@@ -65,7 +86,5 @@
 }
 
 .dropdown-divider {
-  border-top: 1px;
-  border: solid;
-  border-top: #023047;
+  border-top: 1px solid #023047;
 }/*# sourceMappingURL=navbar.css.map */

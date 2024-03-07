@@ -25,7 +25,7 @@
   background-color: #FDA138;
   color: #023047;
   padding: 5%;
-  line-height: 10px; /* Match the height of the button */
+  line-height: 10px;
   display: flex;
   justify-content: center;
 }

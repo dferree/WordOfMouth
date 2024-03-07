@@ -1,68 +1,77 @@
 {% extends "base.html" %} {% block title %} Activities {% endblock %}
 
 {% block content %}
-<h1 align="center">Activities</h1>
-<ul class="list-group list-group-flush" id="activities">
-    {% set categories = {
-        'nightlife': 'mob-nightlife-icon.svg',
-        'restaurant': 'mob-restaurant-icon.svg',
-        'bakery': 'mob-bakery-icon.svg',
-        'activity': 'mob-activity-icon.svg',
-        'adult_ent': 'mob-adult-ent-icon.svg',
-        'nightclub': 'mob-nightclub-icon.svg',
-        'music_venue': 'mob-music-venue-icon.svg',
-        'comedy_club': 'mob-comedy-club-icon.svg',
-        'outdoors': 'mob-outdoors-icon.svg',
-        'visited': 'mob-visited-icon.svg'
-    } %}
+<h2 align="center">Activities</h2>
+<div class="container-activities">
+    <ul class="list-group list-group-flush" id="activities">
+        {% set categories = {
+            'nightlife': 'mob-nightlife-icon.svg',
+            'restaurant': 'mob-restaurant-icon.svg',
+            'bakery': 'mob-bakery-icon.svg',
+            'activity': 'mob-activity-icon.svg',
+            'adult_ent': 'mob-adult-ent-icon.svg',
+            'nightclub': 'mob-nightclub-icon.svg',
+            'music_venue': 'mob-music-venue-icon.svg',
+            'comedy_club': 'mob-comedy-club-icon.svg',
+            'outdoors': 'mob-outdoors-icon.svg',
+            'visited': 'mob-visited-icon.svg'
+        } %}
 
 
-    {% for category in categories %}
-        {% set category_activities = user.activities|selectattr(category, 'equalto', true)|list %}
-        {% if category_activities %}
-            
-            <div class="category-card">
-                <a id="{{ category }}-link"></a>
-                <div class="category-heading">
-                    <div class="category-icon">
-                        <img src="/static/media/category-icons/{{ categories[category] }}" alt="">
-                    </div>
-                    <div class="category-card-title"><h2>{{ category.capitalize() }}</h2></div>
-                    <div class="expand-btn" data-category="{{ category }}">
-                        <i class="fas fa-chevron-down fa-align-center fa-3x" style="padding-top: 5%;"></i> <!-- Assuming you're using Font Awesome for icons -->
-                    </div>
-                </div>
-                <div class="dropdown-content" id="{{ category }}-dropdown">
-                    {% for activity in category_activities %}
-                        <div class="activity-card">
-                            <div class="activity-title"><h3>{{ activity.title }}</h3></div>
-                            <div class="activity-type">
-                                {# Display other activity types as needed #}
-                            </div>
-                            <div class="activity-descritption"><p>{{ activity.description }}</p></div>
-                            <div class="icon-edit-delete">
-                                <img src="/static/media/category-icons/{{ categories[category] }}" alt="">
-                                <button type="button" class="close" onClick="deleteActivity({{ activity.id }})"> 
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <a href="{{ url_for('views.edit_activity', activity_id=activity.id) }}">
-                                    <span class="badge badge-warning">Edit</span>
-                                </a>
-                            </div>
+        {% for category in categories %}
+            {% set category_activities = user.activities|selectattr(category, 'equalto', true)|list %}
+            {% if category_activities %}
+                
+                <div class="category-card">
+                    <a id="{{ category }}-link"></a>
+                    <div class="category-heading">
+                        <div class="category-icon">
+                            <img src="/static/media/category-icons/{{ categories[category] }}" alt="">
                         </div>
-                    {% endfor %}
+                        <div class="category-card-title"><h2>{{ category.capitalize() }}</h2></div>
+                        <div class="expand-btn" data-category="{{ category }}">
+                            <i class="fas fa-chevron-down fa-align-center fa-3x" style="padding-top: 5%;"></i> <!-- Assuming you're using Font Awesome for icons -->
+                        </div>
+                    </div>
+                    <div class="dropdown-content" id="{{ category }}-dropdown">
+                        {% for activity in category_activities %}
+                            <div class="activity-card">
+                                <div class="activity-title"><h3>{{ activity.title }}</h3></div>
+                                <div class="activity-type">
+                                    {# Display other activity types as needed #}
+                                </div>
+                                <div class="activity-description">
+                                    <h4 class="initial">{{ activity.description | truncate(25) }}</h4> <!-- Display initial portion of description -->
+                                    <h4 class="full">{{ activity.description }}</h4> 
+                                    <div class="show-more">
+                                        <i class="fa-solid fa-circle-chevron-down fa-xl"></i> <!-- Icon for "Show More" -->
+                                    </div>                                
+                                </div>
+                                <div class="icon-edit-delete">
+                                    <img src="/static/media/category-icons/{{ categories[category] }}" alt="">
+                                    <button type="button" class="close" onClick="confirmDelete({{ activity.id }})">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <a href="{{ url_for('views.edit_activity', activity_id=activity.id) }}">
+                                        <span class="badge badge-warning">Edit</span>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
                 </div>
-            </div>
-        
-        {% endif %}
-    {% endfor %}
-</ul>
+            
+            {% endif %}
+        {% endfor %}
+    </ul>
 
 
 
-
-<a href="{{ url_for('views.add_activity') }}">
-    <span class="badge badge-warning">Add activity</span>
-</a>
+    </div>   
+    <a href="{{ url_for('views.add_activity') }}">
+        <span class="badge badge-warning">Add activity</span>
+    </a>
+ 
 {% endblock %}
 

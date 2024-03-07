@@ -1,79 +1,203 @@
 @import "_include-media.scss";
 
-.category-card {
-    @include media("<tablet"){
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-color: #FFB703;
-    margin-bottom: 2rem;
-    width: 320px;
-   
-    .activity-card {
-        background-color:#FB8500;
-        margin: 10px;
+@include media(">=desktop") {
+    .category-card {
         border-radius: 20px;
-        padding: 10px;
-    }
-    .activity-title{
-        background-color:#FB8500;
-        border-radius: 20px; 
-        width: 280px;   
-    }
-    .category-heading{
-        background-color: #FB8500;
-        border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-        border-radius:20px;
-        height: 44px;
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .category-icon{
-        align-self: center;
-    }
-
-    .category-card-title{
-        background-color: #FB8500;
-    }
-
-    .category-card-title h2{
-        margin-bottom: 0%;
-    }
-
-    background-color: #FFB703;
-    .category-card-title{
-        align-self: center;
-    }
-    
-    .activity-type{
         background-color: #FFB703;
-        
-    }
-    
-    .activity-description{
-        background-color: #FFB703;
-        
-    }
-    .dropdown-content {
-        display: none;
-    }
+        margin-bottom: 2rem;
+        width: 1000px;
 
-    .dropdown-content.expanded{
-        display: block;
-    }
+        .container-activities {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    /* Apply border-radius change based on whether dropdown is expanded */
-    .dropdown-content.expanded ~ .category-heading {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-    
+        .activity-card {
+            background-color: #FB8500;
+            margin: 1em;
+            border-radius: 20px;
+            padding: 1em;
+        }
 
-    .expand-btn{
-        display: flex;
+        .activity-title {
+            background-color: #FB8500;
+            border-radius: 20px;
+            width: 280px;
+        }
+
+        .category-heading {
+            background-color: #FB8500;
+            border-radius: 20px;
+            height: 44px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .category-icon {
+            align-self: center;
+        }
+
+        .category-card-title {
+            background-color: #FB8500;
+            align-self: center;
+        }
+
+        .category-card-title h2 {
+            margin-bottom: 0%;
+        }
+
+        .activity-type {
+            background-color: #FB8500;
+        }
+
+        .activity-description {
+            background-color: #fc9c00;
+            border-radius: 5px;
+            padding: 1em;
+            overflow: hidden;
+            position: relative;
+            margin: 5px;
+        }
+
+        .activity-description .full {
+            display: none;
+        }
+
+        .show-more {
+            position: absolute;
+            bottom: 0.5em;
+            right: 0.5em;
+            cursor: pointer;
+        }
+
+        .activity-description.expanded .full {
+            display: block;
+        }
+
+        .activity-description.expanded .initial {
+            display: none;
+        }
+
+        .dropdown-content {
+            display: none;
+        }
+
+        .dropdown-content.expanded {
+            display: block;
+        }
+
+        .dropdown-content.expanded ~ .category-heading {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .expand-btn {
+            display: flex;
+        }
     }
 }
+
+@include media("<desktop") {
+    .category-card {
+        width: 700px;
+
+        .container-activities {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .activity-card {
+            background-color: #FB8500;
+            margin: 1em;
+            border-radius: 20px;
+            padding: 1em;
+        }
+
+        .activity-title {
+            background-color: #FB8500;
+            border-radius: 20px;
+            width: 280px;
+        }
+
+        .category-heading {
+            background-color: #FB8500;
+            border-radius: 20px;
+            height: 44px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .category-icon {
+            align-self: center;
+        }
+
+        .category-card-title {
+            background-color: #FB8500;
+            align-self: center;
+        }
+
+        .category-card-title h2 {
+            margin-bottom: 0%;
+        }
+
+        .activity-type {
+            background-color: #FB8500;
+        }
+
+        .activity-description {
+            background-color: #fc9c00;
+            border-radius: 5px;
+            padding: 1em;
+            overflow: hidden;
+            position: relative;
+            margin: 5px;
+        }
+
+        .activity-description .full {
+            display: none;
+        }
+
+        .show-more {
+            position: absolute;
+            bottom: 0.5em;
+            right: 0.5em;
+            cursor: pointer;
+        }
+
+        .activity-description.expanded .full {
+            display: block;
+        }
+
+        .activity-description.expanded .initial {
+            display: none;
+        }
+
+        .dropdown-content {
+            display: none;
+        }
+
+        .dropdown-content.expanded {
+            display: block;
+        }
+
+        .dropdown-content.expanded ~ .category-heading {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .expand-btn {
+            display: flex;
+        }
+    }
+}
+
+@include media("<tablet") {
+    .category-card {
+        border-radius: 20px;
+        background-color: #FFB703;
+        margin-bottom: 2rem;
+        width: 320px;
+    }
 }

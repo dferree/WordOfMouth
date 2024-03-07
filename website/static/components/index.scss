@@ -6,26 +6,5 @@
 
 body {background-color: #F5EBE0;
     color: #023047;
+    font-size: calc(15px + 0.390625vw);
 }
-
-html {
-    font-size: 16px;
-    
-    @include media("<tablet"){
-    font-size: 12px;
-        h1 {
-            font-size: 2.5rem;
-        }
-        h2 {
-            font-size: 2rem;
-        }
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0;
-        }
-        h4 {
-            font-size: 1rem;
-        }   
-    }
-}
-

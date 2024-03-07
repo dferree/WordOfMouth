@@ -1,46 +1,62 @@
 @import "_include-media.scss";
 
-
 .nav-wom {
-    height: 5rem;
+    justify-content: space-around;
+    align-items: center;
     display: flex;
-    @include media("<tablet"){
-        background-color: #219EBC;
+    background-color: #219EBC;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s ease;
+    z-index: 1000; // Ensure the navbar is above other content
+
+    h4 {
+        font-size: 16px;
+    }
+
+    @include media("<=phone") {
+        height: 5rem;
         justify-content: space-around;
         align-items: center;
     }
-    
-    background-color: red;
-    justify-content: space-around;
-    align-items: center;
+
+    @include media(">=tablet") {
+        height: 85px;
+    } 
 }
 
-.cat-toggler {
-    // @include media("<tablet"){
-    // //     margin-left: 1.333rem;
-    // // }
-}
 .nav-logo-btn {
-    background: url("/static/media/nav-button-phone.svg");
     background-position: center;
-    background-size: contain; /* or background-size: cover; */
+    background-size: contain; // or background-size: cover;
     border: none;
-    @include media("<tablet"){
-        width: 51px;
-        height: 40px;
+    padding: 0;
+
+    @include media("<tablet") {
+        width: 54px;
+        height: 43px;
+        background: url("/static/media/nav-button-phone.svg");
+    }
+
+    @include media(">=tablet") {
+        background: url("/static/media/nav-button-tablet.svg");
+        width: 76px;
+        height: 60px;
     }
 }
 
 .nav-logo-btn:focus,
 .nav-logo-btn:active {
     outline: none;
-    border: none;  /* Add this to remove any border as well */
+    border: none;
 }
 
 .nav-menu-button {
     display: inline-block;
     cursor: pointer;
-    
+
     .bar1, .bar2, .bar3 {
         width: 41px;
         height: 9.6px;
@@ -49,15 +65,15 @@
         transition: 0.4s;
         border-radius: 20px;
     }
-    
+
     .change .bar1 {
         transform: translate(0, 11px) rotate(-45deg);
     }
-    
+
     .change .bar2 {
         opacity: 0;
     }
-    
+
     .change .bar3 {
         transform: translate(0, -11px) rotate(45deg);
     }
@@ -66,15 +82,13 @@
 .nav-menu-button:focus,
 .nav-menu-button:active {
     outline: none;
-    border: none;  /* Add this to remove any border as well */
+    border: none;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     background-color: #219EBC;
 }
-.dropdown-divider{
-    border-top: 1px;
-    border: solid;
-    border-top: #023047;
-}
 
+.dropdown-divider {
+    border-top: 1px solid #023047;
+}
