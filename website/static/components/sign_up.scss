@@ -1,34 +1,34 @@
 .form-container {
     background-color: #FFB703;
-    width: 90%;
+    width: 60%;
     margin-top: 5%;
     border-radius: 20px;
-    padding: 5% 5% 0% 5%;
+    padding: 2em;
+    
 
-    h3 {
-        font-size: 20px;
-        margin-bottom: 5%;
+    @include media("<desktop"){
+        width: 90%;
     }
 
-    label {
-        font-size: 16px;
+    h3 {
+        // font-size: 20px;
+        margin-bottom: 5%;
     }
 
     .form-control {
         background: #FDA138;
         border-radius: 20px;
-        height: 40px;
+        height: 4em;
         border-color: #023047;
     }
 
     .btn-primary {
-        border-radius: 20px;
-        height: 40px;
-        font-size: 16px;
+        border-radius: 15px;
+        height: auto;
         background-color: #FDA138;
         color: #023047;
-        padding: 5%;
-        line-height: 10px; // Match the height of the button
+        padding: 0.5em;
+        // line-height: 10px; // Match the height of the button
         display: flex;
         justify-content: center;
     }
