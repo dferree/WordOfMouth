@@ -1,8 +1,46 @@
 {% extends "base.html" %} {% block title %} Activities {% endblock %}
 
 {% block content %}
-<h2 align="center">Activities</h2>
+<div class="sidebar">
+    <h3>Jump to...</h3>
+{% if user.activities %}
+    {% if user.activities|selectattr('nightlife', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightlife-link' }}"><h4>Nightlife</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('restaurant', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#restaurant-link' }}"><h4>Restaurant</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('activity', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#activity-link' }}"><h4>Activity</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('bakery', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#bakery-link' }}"><h4>Bakery</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('adult_ent', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#adult_ent-link' }}"><h4>Adult Entertainment</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('nightclub', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightclub-link' }}"><h4>Nightclub</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('music_venue', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#music_venue-link' }}"><h4>Music Venue</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('comedy_club', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#comedy_club-link' }}"><h4>Comedy Club</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('outdoors', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#outdoors-link' }}"><h4>Outdoors</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('visited', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#visited-link' }}"><h4>Visited</h4></a>
+    {% endif %}
+{% endif %}
+
+  
+</div>
 <div class="container-activities">
+    <h2 align="center">Activities</h2>
+  
     <ul class="list-group list-group-flush" id="activities">
         {% set categories = {
             'nightlife': 'mob-nightlife-icon.svg',
@@ -41,14 +79,17 @@
                                     {# Display other activity types as needed #}
                                 </div>
                                 <div class="activity-description">
-                                    <h4 class="initial">{{ activity.description | truncate(25) }}</h4> <!-- Display initial portion of description -->
+                                    <h4 class="initial">{{ activity.description | truncate(70) }}</h4> <!-- Display initial portion of description -->
                                     <h4 class="full">{{ activity.description }}</h4> 
                                     <div class="show-more">
                                         <i class="fa-solid fa-circle-chevron-down fa-xl"></i> <!-- Icon for "Show More" -->
                                     </div>                                
                                 </div>
+
+
+
                                 <div class="icon-edit-delete">
-                                    <img src="/static/media/category-icons/{{ categories[category] }}" alt="">
+                                    <!-- <img src="/static/media/category-icons/{{ categories[category] }}" alt=""> -->
                                     <button type="button" class="close" onClick="confirmDelete({{ activity.id }})">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -65,9 +106,6 @@
             {% endif %}
         {% endfor %}
     </ul>
-
-
-
     </div>   
     <a href="{{ url_for('views.add_activity') }}">
         <span class="badge badge-warning">Add activity</span>

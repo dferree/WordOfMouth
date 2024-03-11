@@ -1,4 +1,7 @@
 @media (min-width: 1024px) {
+  .container-activities {
+    margin-left: 6em;
+  }
   .category-card {
     border-radius: 20px;
     background-color: #FFB703;
@@ -162,4 +165,37 @@
     margin-bottom: 2rem;
     width: 320px;
   }
+  .sidebar {
+    display: none;
+  }
+}
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+  left: 0;
+  border-right: 0.5em solid #219EBC; /* Adjust thickness and color as needed */
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 1em;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
 }/*# sourceMappingURL=activity-card.css.map */

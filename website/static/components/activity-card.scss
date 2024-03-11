@@ -1,203 +1,207 @@
-@import "_include-media.scss";
+@media (min-width: 1024px) {
 
-@include media(">=desktop") {
-    .category-card {
-        border-radius: 20px;
-        background-color: #FFB703;
-        margin-bottom: 2rem;
-        width: 1000px;
-
-        .container-activities {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .activity-card {
-            background-color: #FB8500;
-            margin: 1em;
-            border-radius: 20px;
-            padding: 1em;
-        }
-
-        .activity-title {
-            background-color: #FB8500;
-            border-radius: 20px;
-            width: 280px;
-        }
-
-        .category-heading {
-            background-color: #FB8500;
-            border-radius: 20px;
-            height: 44px;
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        .category-icon {
-            align-self: center;
-        }
-
-        .category-card-title {
-            background-color: #FB8500;
-            align-self: center;
-        }
-
-        .category-card-title h2 {
-            margin-bottom: 0%;
-        }
-
-        .activity-type {
-            background-color: #FB8500;
-        }
-
-        .activity-description {
-            background-color: #fc9c00;
-            border-radius: 5px;
-            padding: 1em;
-            overflow: hidden;
-            position: relative;
-            margin: 5px;
-        }
-
-        .activity-description .full {
-            display: none;
-        }
-
-        .show-more {
-            position: absolute;
-            bottom: 0.5em;
-            right: 0.5em;
-            cursor: pointer;
-        }
-
-        .activity-description.expanded .full {
-            display: block;
-        }
-
-        .activity-description.expanded .initial {
-            display: none;
-        }
-
-        .dropdown-content {
-            display: none;
-        }
-
-        .dropdown-content.expanded {
-            display: block;
-        }
-
-        .dropdown-content.expanded ~ .category-heading {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-
-        .expand-btn {
-            display: flex;
-        }
+    .container-activities{
+        margin-left: 6em;
     }
-}
-
-@include media("<desktop") {
     .category-card {
-        width: 700px;
-
-        .container-activities {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .activity-card {
-            background-color: #FB8500;
-            margin: 1em;
-            border-radius: 20px;
-            padding: 1em;
-        }
-
-        .activity-title {
-            background-color: #FB8500;
-            border-radius: 20px;
-            width: 280px;
-        }
-
-        .category-heading {
-            background-color: #FB8500;
-            border-radius: 20px;
-            height: 44px;
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        .category-icon {
-            align-self: center;
-        }
-
-        .category-card-title {
-            background-color: #FB8500;
-            align-self: center;
-        }
-
-        .category-card-title h2 {
-            margin-bottom: 0%;
-        }
-
-        .activity-type {
-            background-color: #FB8500;
-        }
-
-        .activity-description {
-            background-color: #fc9c00;
-            border-radius: 5px;
-            padding: 1em;
-            overflow: hidden;
-            position: relative;
-            margin: 5px;
-        }
-
-        .activity-description .full {
-            display: none;
-        }
-
-        .show-more {
-            position: absolute;
-            bottom: 0.5em;
-            right: 0.5em;
-            cursor: pointer;
-        }
-
-        .activity-description.expanded .full {
-            display: block;
-        }
-
-        .activity-description.expanded .initial {
-            display: none;
-        }
-
-        .dropdown-content {
-            display: none;
-        }
-
-        .dropdown-content.expanded {
-            display: block;
-        }
-
-        .dropdown-content.expanded ~ .category-heading {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-
-        .expand-btn {
-            display: flex;
-        }
+      border-radius: 20px;
+      background-color: #FFB703;
+      margin-bottom: 2rem;
+      width: 1000px;
     }
-}
+    .category-card .container-activities {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .category-card .activity-card {
+      background-color: #FB8500;
+      margin: 1em;
+      border-radius: 20px;
+      padding: 1em;
+    }
+    .category-card .activity-title {
+      background-color: #FB8500;
+      border-radius: 20px;
+      width: 280px;
+    }
+    .category-card .category-heading {
+      background-color: #FB8500;
+      border-radius: 20px;
+      height: 44px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .category-card .category-icon {
+      align-self: center;
+    }
+    .category-card .category-card-title {
+      background-color: #FB8500;
+      align-self: center;
+    }
+    .category-card .category-card-title h2 {
+      margin-bottom: 0%;
+    }
+    .category-card .activity-type {
+      background-color: #FB8500;
+    }
+    .category-card .activity-description {
+      background-color: #fc9c00;
+      border-radius: 5px;
+      padding: 1em;
+      overflow: hidden;
+      position: relative;
+      margin: 5px;
+    }
+    .category-card .activity-description .full {
+      display: none;
+    }
+    .category-card .show-more {
+      position: absolute;
+      bottom: 0.5em;
+      right: 0.5em;
+      cursor: pointer;
+    }
+    .category-card .activity-description.expanded .full {
+      display: block;
+    }
+    .category-card .activity-description.expanded .initial {
+      display: none;
+    }
+    .category-card .dropdown-content {
+      display: none;
+    }
+    .category-card .dropdown-content.expanded {
+      display: block;
+    }
+    .category-card .dropdown-content.expanded ~ .category-heading {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .category-card .expand-btn {
+      display: flex;
+    }
+  }
 
-@include media("<tablet") {
+
+  @media (max-width: 1023px) {
     .category-card {
-        border-radius: 20px;
-        background-color: #FFB703;
-        margin-bottom: 2rem;
-        width: 320px;
+      width: 700px;
     }
+    .category-card .container-activities {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .category-card .activity-card {
+      background-color: #FB8500;
+      margin: 1em;
+      border-radius: 20px;
+      padding: 1em;
+    }
+    .category-card .activity-title {
+      background-color: #FB8500;
+      border-radius: 20px;
+      width: 280px;
+    }
+    .category-card .category-heading {
+      background-color: #FB8500;
+      border-radius: 20px;
+      height: 44px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .category-card .category-icon {
+      align-self: center;
+    }
+    .category-card .category-card-title {
+      background-color: #FB8500;
+      align-self: center;
+    }
+    .category-card .category-card-title h2 {
+      margin-bottom: 0%;
+    }
+    .category-card .activity-type {
+      background-color: #FB8500;
+    }
+    .category-card .activity-description {
+      background-color: #fc9c00;
+      border-radius: 5px;
+      padding: 1em;
+      overflow: hidden;
+      position: relative;
+      margin: 5px;
+    }
+    .category-card .activity-description .full {
+      display: none;
+    }
+    .category-card .show-more {
+      position: absolute;
+      bottom: 0.5em;
+      right: 0.5em;
+      cursor: pointer;
+    }
+    .category-card .activity-description.expanded .full {
+      display: block;
+    }
+    .category-card .activity-description.expanded .initial {
+      display: none;
+    }
+    .category-card .dropdown-content {
+      display: none;
+    }
+    .category-card .dropdown-content.expanded {
+      display: block;
+    }
+    .category-card .dropdown-content.expanded ~ .category-heading {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .category-card .expand-btn {
+      display: flex;
+    }
+  }
+  @media (max-width: 767px) {
+    .category-card {
+      border-radius: 20px;
+      background-color: #FFB703;
+      margin-bottom: 2rem;
+      width: 320px;
+    }
+
+    .sidebar{
+        display: none
+    }
+  }
+
+
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+    height: 100vh;
+    overflow: auto;
+    left: 0;
+    border-right: 0.5em solid #219EBC; /* Adjust thickness and color as needed */
 }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 1em;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }

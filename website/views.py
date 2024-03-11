@@ -8,6 +8,14 @@ import json
 
 views = Blueprint('views', __name__)
 
+
+# Mapping of class titles to display titles
+DISPLAY_TITLES = {
+    'adult_ent': 'Adult Entertainment',
+    'music_venue': 'Music Venue',
+    'comedy_club': 'Comedy Club'
+}
+
 @views.route('/', methods=['GET'])
 def home():
     if current_user.is_authenticated:
