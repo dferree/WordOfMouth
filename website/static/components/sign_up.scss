@@ -1,10 +1,10 @@
 .form-container {
     background-color: #FFB703;
     width: 60%;
-    margin-top: 5%;
+    margin-top: 1em;
     border-radius: 20px;
     padding: 2em;
-    
+    margin-bottom: 4em;
 
     @include media("<desktop"){
         width: 90%;

@@ -5,7 +5,6 @@
     align-items: center;
     display: flex;
     background-color: #219EBC;
-
     position: fixed;
     top: 0;
     left: 0;
@@ -26,6 +25,20 @@
     @include media(">=tablet") {
         height: 85px;
     } 
+}
+
+.nav-wom-bottom{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    background-color: #219EBC;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+     /* Ensure the navbar is above other content */
+    position: fixed;
+    margin-top: 5em;
+    z-index: 1000;
 }
 
 .nav-logo-btn {
