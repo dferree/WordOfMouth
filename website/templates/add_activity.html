@@ -1,14 +1,16 @@
 {% extends "base.html" %} {% block title %} Activities {% endblock %}
 {% block content %}
+
+<h1>Add Activity</h1>
 <div class="form-container">
 <form method="POST">
     <label for="title">Activity Title:</label>
     <input type="text" id="title" name="title" class="form-control" required>
     
     <label for="description">Activity Description:</label>
-    <textarea name="description" id="description" class="form-control" required></textarea>
+    <textarea name="description" id="description" class="form-control" style="height: 6em;" required></textarea>
    
-    <div class="silly-container">
+    <div class="checkbox-container">
         <div class="form-check">
             <input class="form-check-input" type="checkbox" id="nightlife" name="nightlife" value="something">
             <label class="form-check-label" for="nightlife">Nightlife</label>
@@ -62,7 +64,7 @@
 
     <br />
     <div align="center">
-        <button type="submit" class="btn btn-primary" style="margin-bottom: 5%;"> Add activity</button>
+        <button type="submit" class="btn btn-primary"> Add activity</button>
     </div>
 </form>
 </div>

@@ -12,9 +12,14 @@
 .form-container .form-control {
   background: #FDA138;
   border-radius: 20px;
-  height: 4em;
+  height: 3em;
   border-color: #023047;
 }
+
+.form-container .form-control .description{
+  height: 8em;
+}
+
 .form-container .btn-primary {
   border-radius: 15px;
   height: auto;
@@ -24,9 +29,16 @@
   display: flex;
   justify-content: center;
 }
-.form-container .already {
-  margin-top: 5%;
+
+
+
+.checkbox-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 1em;
+  padding-left: 1em;
 }
+
 .form-container .silly-container {
   margin-top: 5%;
   display: flex;

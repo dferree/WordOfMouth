@@ -6,6 +6,8 @@
     padding: 2em;
     margin-bottom: 4em;
 
+
+    
     @include media("<desktop"){
         width: 90%;
     }
@@ -20,6 +22,10 @@
         border-radius: 20px;
         height: 4em;
         border-color: #023047;
+    }
+
+    .form-control .description{
+        height: 8em;
     }
 
     .btn-primary {
@@ -37,7 +43,7 @@
         margin-top: 5%;
     }
 
-    .silly-container {
+    .checkbox-container {
         margin-top: 5%;
         display: flex;
         flex-wrap: wrap;
