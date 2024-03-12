@@ -2,6 +2,9 @@
 
 {% block content %}
 <div class="sidebar">
+    <a class="add-act-side" href="{{ url_for('views.add_activity') }}">
+        <span class="btn add">Add activity</span>
+    </a>
     <h3>Jump to...</h3>
 {% if user.activities %}
     {% if user.activities|selectattr('nightlife', 'equalto', true)|list %}
@@ -39,9 +42,13 @@
   
 </div>
 <div class="container-activities">
-    <h2 align="center">Activities</h2>
-  
-    <ul class="list-group list-group-flush" id="activities">
+    <div class="title-add">
+            <h2 align="center">Activities</h2>
+            <a class="tab-phone-add" href="{{ url_for('views.add_activity') }}">
+                <span class="badge badge-warning">Add activity</span>
+            </a>
+    </div>
+        <ul class="list-group list-group-flush" id="activities">
         {% set categories = {
             'nightlife': 'mob-nightlife-icon.svg',
             'restaurant': 'mob-restaurant-icon.svg',
@@ -107,9 +114,7 @@
         {% endfor %}
     </ul>
     </div>   
-    <a href="{{ url_for('views.add_activity') }}">
-        <span class="badge badge-warning">Add activity</span>
-    </a>
+    
  
 {% endblock %}
 
