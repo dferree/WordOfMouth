@@ -75,3 +75,16 @@ window.addEventListener('scroll', function() {
     lastScrollTop = currentScroll;
 });
 
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
+  });
+
+  $(document).ready(function(){
+    // Initialize Bootstrap tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Hide tooltip when dropdown is shown
+    $('.cat-toggler').on('show.bs.dropdown', function () {
+        $('[data-toggle="tooltip"]').tooltip('hide');
+    });
+});

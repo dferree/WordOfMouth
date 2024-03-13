@@ -167,7 +167,7 @@
     display: block;
   }
   .category-card {
-    width: 50em;
+    width: 40em;
     margin-left: 0;
   }
 }
@@ -176,7 +176,7 @@
     margin-left: 10em;
   }
   .category-card {
-    width: 46em;
+    width: 40em;
     margin-left: 0;
   }
   .sidebar {
@@ -188,7 +188,7 @@
     margin-left: 10%;
   }
   .category-card {
-    width: 46em;
+    width: 40em;
     margin-left: 0;
   }
 }

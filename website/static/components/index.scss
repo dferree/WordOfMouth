@@ -3,8 +3,21 @@
 @import "activity-card.scss";
 @import "home.scss";
 @import "forms.scss";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap');
 
-body {background-color: #F5EBE0;
+
+// <uniquifier>: Use a unique and descriptive class name
+
+.nunito {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body {
+    background-color: #F5EBE0;
     color: #023047;
     font-size: calc(15px + 0.390625vw);
-}
+    font-family:Arial, Helvetica, sans-serif;
+  }
