@@ -1,3 +1,5 @@
+
+// delete function button
 function deleteActivity(activityId) {
     fetch('/delete-activity', {
         method: 'POST',
@@ -12,7 +14,6 @@ function toggleDropdown(category) {
     dropdown.classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
     if (!event.target.matches('.drop-arrow')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -59,21 +60,25 @@ $(document).ready(function() {
 });
 
 var lastScrollTop = 0;
-var navbar = document.querySelector('.nav-wom');
-
 window.addEventListener('scroll', function() {
     var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
+    var navbar = document.querySelector('.nav-wom');
+    var navbar_bottom = document.querySelector('.nav-wom-bottom');
     if (currentScroll > lastScrollTop) {
         // Scrolling down
         navbar.style.transform = 'translateY(-100%)';
+        navbar_bottom.style.transform = 'translateY(+100%)';
     } else {
         // Scrolling up
         navbar.style.transform = 'translateY(0)';
+        navbar_bottom.style.transform = 'translateY(0)';
     }
 
     lastScrollTop = currentScroll;
 });
+
+
+
 
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
