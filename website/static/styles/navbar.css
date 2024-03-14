@@ -10,40 +10,43 @@
   transition: transform 0.3s ease;
   z-index: 1000;
 }
-.nav-wom h4 {
-  font-size: 16px;
-}
 @media (max-width: 320px) {
   .nav-wom {
-    height: 5rem;
+    height: 4em;
     justify-content: space-around;
     align-items: center;
   }
 }
 @media (min-width: 768px) {
   .nav-wom {
-    height: 85px;
+    height: 4em;
   }
+}
+.nav-wom h1 {
+  margin-bottom: 0;
 }
 
 .nav-logo-btn {
   background-position: center;
-  background-size: contain;
+  background-size: auto; /* Adjust to your preference */
+  background-repeat: no-repeat;
   border: none;
   padding: 0;
 }
 @media (max-width: 767px) {
   .nav-logo-btn {
-    width: 54px;
-    height: 43px;
-    background: url("/static/media/nav-button-phone.svg");
+    width: 3.5em;
+    height: 2.4em;
+    background: url("/static/media/home-logo-phone.svg");
+    background-size: cover; /* Adjust to your preference */
   }
 }
 @media (min-width: 768px) {
   .nav-logo-btn {
-    background: url("/static/media/nav-button-tablet.svg");
-    width: 76px;
-    height: 60px;
+    background: url("/static/media/home-logo-phone.svg");
+    width: 4.5em;
+    height: 3em;
+    background-size: cover; /* Adjust to your preference */
   }
 }
 

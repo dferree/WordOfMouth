@@ -14,8 +14,49 @@
   body {
     background-color: #F5EBE0;
     color: #023047;
-    font-size: calc(15px + 0.390625vw);
-    font-family:"Nunito", sans-serif;
+    // font-size: calc(15px + 0.390625vw);
+    font-family: "Nunito", sans-serif;
+  }
+  
+  h1 {
+    
+    font-size: calc(2em + 1vw);
+  }
+  
+  h2 {
+    font-size: calc(1.75em + 0.5vw);
+  }
+  
+  h3 {
+    font-size: calc(1.5em + 0.25vw);
+  }
+  
+  h4 {
+    font-size: calc(1em + 0.390625vw);
+  }
+  
+  p {
+    font-size: calc(0.5em + 0.390625vw);
+  }
+  
+@include media("<tablet"){
+  h1 {
+    font-size: calc(1.6em + 1vw);
   }
 
-  
+  h2 {
+    font-size: calc(1.4em + 0.5vw);
+  }
+
+  h3 {
+    font-size: calc(1.2em + 0.25vw);
+  }
+
+  h4 {
+    font-size: calc(16px + 0.390625vw);
+  }
+
+  p {
+    font-size: calc(16px + 0.390625vw);
+  }
+}

@@ -60,23 +60,24 @@ $(document).ready(function() {
 });
 
 var lastScrollTop = 0;
+var navbar = document.querySelector('.nav-wom');
+var navbar_bottom = document.querySelector('.nav-wom-bottom');
+
 window.addEventListener('scroll', function() {
     var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    var navbar = document.querySelector('.nav-wom');
-    var navbar_bottom = document.querySelector('.nav-wom-bottom');
+    
     if (currentScroll > lastScrollTop) {
         // Scrolling down
         navbar.style.transform = 'translateY(-100%)';
-        navbar_bottom.style.transform = 'translateY(+100%)';
+        navbar_bottom.style.transform = 'translateY(0)';
     } else {
         // Scrolling up
         navbar.style.transform = 'translateY(0)';
-        navbar_bottom.style.transform = 'translateY(0)';
+        navbar_bottom.style.transform = 'translateY(100%)';
     }
 
     lastScrollTop = currentScroll;
 });
-
 
 
 

@@ -31,15 +31,5 @@
 .home-actions h4{
     margin-bottom: 10px;
 }
-body{
-    h4{
-        font-size: 14px;
-    }
-}
 
 
-@include media("<tablet"){
-    .container{
-        padding-top: 70px;
-    }
-}

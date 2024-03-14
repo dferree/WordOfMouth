@@ -28,14 +28,4 @@
 
 .home-actions h4 {
   margin-bottom: 10px;
-}
-
-body h4 {
-  font-size: 14px;
-}
-
-@media (max-width: 767px) {
-  .container {
-    padding-top: 70px;
-  }
 }/*# sourceMappingURL=home.css.map */
