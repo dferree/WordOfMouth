@@ -14,8 +14,6 @@
     z-index: 1000; // Ensure the navbar is above other content
 
  
-    
-
     @include media("<=phone") {
         height: 4em;
         justify-content: space-around;

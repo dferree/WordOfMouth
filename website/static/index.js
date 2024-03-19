@@ -5,7 +5,7 @@ function deleteActivity(activityId) {
         method: 'POST',
         body: JSON.stringify({activityId: activityId}),
     }).then((_res) => {
-        window.location.href = "/";
+        window.location.href = "/activities";
     });
 }
 

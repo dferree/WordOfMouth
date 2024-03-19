@@ -6,20 +6,23 @@
   padding: 2em;
   margin-bottom: 4em;
 }
+@media (max-width: 1023px) {
+  .form-container {
+    width: 90%;
+  }
+}
 .form-container h3 {
   margin-bottom: 5%;
 }
 .form-container .form-control {
   background: #FDA138;
   border-radius: 20px;
-  height: 3em;
+  height: 4em;
   border-color: #023047;
 }
-
-.form-container .form-control .description{
+.form-container .form-control .description {
   height: 8em;
 }
-
 .form-container .btn-primary {
   border-radius: 15px;
   height: auto;
@@ -29,22 +32,15 @@
   display: flex;
   justify-content: center;
 }
-
-
-
-.checkbox-container {
+.form-container .already {
+  margin-top: 5%;
+}
+.form-container .checkbox-container {
+  margin-top: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding-top: 1em;
   padding-left: 1em;
-}
-
-.form-container .silly-container {
-  margin-top: 5%;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-  justify-content: space-evenly;
 }
 .form-container .form-check-input {
   position: relative;

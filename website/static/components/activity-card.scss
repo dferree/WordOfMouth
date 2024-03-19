@@ -45,7 +45,7 @@
 .category-heading {
   background-color: #fb8500;
   border-radius: 20px;
-  height: 3em;
+  height: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,16 +115,21 @@
   display: flex;
 }
 
+
+// sidebar styling only on desktop or large tablets
 .sidebar {
   margin: 0;
   margin-left: 1em;
+  // margin-top: 5em;
   padding: 0;
+  padding-top: 5em;
   padding-right: 1em;
-  width: 200px;
+  width: auto;
   position: fixed;
   height: 100vh;
   overflow: auto;
   left: 0;
+  top: 0;
   border-right: 0.5em solid #219ebc; /* Adjust thickness and color as needed */
   display: none; // Initially hide sidebar
 }
@@ -133,7 +138,7 @@
   padding-left: 1em;
 }
 
-.sidebar a .add-act-side:hover {
+.sidebar a.add-act-side:hover:not(.active) {
   background-color: #f5ebe0;
   padding-left: 1em;
 }
@@ -149,21 +154,22 @@
 /* Active/current link */
 .sidebar a.active {
   background-color: #04aa6d;
-  color: white;
+  color: #023047;
 }
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+  background-color: #219ebc;
+  color: #023047;
 }
 
 .sidebar .add {
   background-color: #219ebc;
+  font-weight: bold;
 }
 
 .sidebar .add:hover {
-  background-color: #555;
+  background-color: #fb8500;
 }
 
 @include media(">=desktop") {
@@ -220,6 +226,8 @@
   
   .tab-phone-add{
     display: block;
+    background-color: #219ebc;
+    font-weight: bold;
   }
 }
 
@@ -227,4 +235,95 @@
   .category-card {
     width: 320px; // Adjusting width for tablets
   }
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.icon-edit-delete{
+  display: flex;
+  justify-content: space-between;
+  margin-top:0.5em;
+}
+
+// delete button
+.delete-button {
+  width: 6em;
+  height: 2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  background: #e62222;
+}
+
+.delete-button, .delete-button .text, .delete-button .icon {
+  transition: 200ms;
+}
+
+.delete-button .text {
+  transform: translateX(0.5em);
+  color: white;
+  font-weight: bold;
+}
+
+.delete-button .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(4em);
+  height: 2em;
+  width: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button svg {
+  width: 1em;
+  fill: #eee;
+}
+
+.delete-button:hover {
+  background: #ff3636;
+}
+
+.delete-button:hover .text {
+  color: transparent;
+}
+
+.delete-button:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(-1.5em);
+}
+
+.delete-button:focus {
+  outline: none;
+}
+
+.delete-button:active .icon svg {
+  transform: scale(0.8);
+}
+
+
+// edit button
+.edit-btn{
+  background-color: #219ebc;
+  width: 4em;
+  height: 2em;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: center;
+}
+
+.edit-text{
+  color: #023047;
+  align-self: center;
+  font-weight: bold;
 }
