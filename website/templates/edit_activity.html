@@ -10,62 +10,54 @@
 
         <label for="description">Description:</label>
         <textarea name="description" id="description" class="form-control" style="height: 6em;" required>{{ activity.description }}</textarea>
-
+        <div class="checkbox-submit">
         <div class="checkbox-container">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="nightlife" name="nightlife" {% if activity.nightlife %}checked{% endif %}>
-                <label class="form-check-label" for="nightlife">Nightlife</label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="restaurant" name="restaurant" {% if activity.restaurant %}checked{% endif %}>
-                <label class="form-check-label" for="restaurant">Restaurant</label>
-            </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="bakery" name="bakery" {% if activity.bakery %}checked{% endif %}>
-                <label class="form-check-label" for="bakery">Bakery</label>
-            </div>
-            
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="activity" name="activity" {% if activity.activity %}checked{% endif %}>
                 <label class="form-check-label" for="activity">Activity</label>
             </div>
-            
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="adult_ent" name="adult_ent" {% if activity.adult_ent %}checked{% endif %}>
                 <label class="form-check-label" for="adult_ent">Adult Entertainment</label>
             </div>
-            
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="nightclub" name="nightclub" {% if activity.nightclub %}checked{% endif %}>
-                <label class="form-check-label" for="nightclub">Nightclub</label>
+                <input class="form-check-input" type="checkbox" id="bakery" name="bakery" {% if activity.bakery %}checked{% endif %}>
+                <label class="form-check-label" for="bakery">Bakery</label>
             </div>
-            
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="music_venue" name="music_venue" {% if activity.music_venue %}checked{% endif %}>
-                <label class="form-check-label" for="music_venue">Music Venue</label>
-            </div>
-            
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="comedy_club" name="comedy_club" {% if activity.comedy_club %}checked{% endif %}>
                 <label class="form-check-label" for="comedy_club">Comedy Club</label>
             </div>
-            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="music_venue" name="music_venue" {% if activity.music_venue %}checked{% endif %}>
+                <label class="form-check-label" for="music_venue">Music Venue</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="nightclub" name="nightclub" {% if activity.nightclub %}checked{% endif %}>
+                <label class="form-check-label" for="nightclub">Nightclub</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="nightlife" name="nightlife" {% if activity.nightlife %}checked{% endif %}>
+                <label class="form-check-label" for="nightlife">Nightlife</label>
+            </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="outdoors" name="outdoors" {% if activity.outdoors %}checked{% endif %}>
                 <label class="form-check-label" for="outdoors">Outdoors</label>
             </div>
-            
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="restaurant" name="restaurant" {% if activity.restaurant %}checked{% endif %}>
+                <label class="form-check-label" for="restaurant">Restaurant</label>
+            </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="visited" name="visited" {% if activity.visited %}checked{% endif %}>
                 <label class="form-check-label" for="visited">Visited</label>
             </div>
-            
-            <button type="submit" class="btn btn-primary" style="margin-bottom: 5%; margin-top: 5%;">Save Changes</button>
-    </form>
+        </div>
+            <button type="submit" class="btn btn-submit">Save Changes</button>
+        </form>
     </div>
-
+    
+    
     <nav class="nav-wom-bottom" id="nav-wom-bottom">
         <a class="portfolio-link" href="https://codeferree.co.uk/" data-toggle="tooltip" title="Visit Daniel Ferree's Portfolio" target="_blank"><h2>Built by Daniel Ferree</h2></a>
         <div class="social-links">

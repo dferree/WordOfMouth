@@ -7,32 +7,32 @@
     </a>
     <h3>Jump to...</h3>
 {% if user.activities %}
-    {% if user.activities|selectattr('nightlife', 'equalto', true)|list %}
-        <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightlife-link' }}"><h4>Nightlife</h4></a>
-    {% endif %}
-    {% if user.activities|selectattr('restaurant', 'equalto', true)|list %}
-        <a class="dropdown-item" href="{{ url_for('views.activities') + '#restaurant-link' }}"><h4>Restaurant</h4></a>
-    {% endif %}
     {% if user.activities|selectattr('activity', 'equalto', true)|list %}
         <a class="dropdown-item" href="{{ url_for('views.activities') + '#activity-link' }}"><h4>Activity</h4></a>
-    {% endif %}
-    {% if user.activities|selectattr('bakery', 'equalto', true)|list %}
-        <a class="dropdown-item" href="{{ url_for('views.activities') + '#bakery-link' }}"><h4>Bakery</h4></a>
     {% endif %}
     {% if user.activities|selectattr('adult_ent', 'equalto', true)|list %}
         <a class="dropdown-item" href="{{ url_for('views.activities') + '#adult_ent-link' }}"><h4>Adult Entertainment</h4></a>
     {% endif %}
-    {% if user.activities|selectattr('nightclub', 'equalto', true)|list %}
-        <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightclub-link' }}"><h4>Nightclub</h4></a>
-    {% endif %}
-    {% if user.activities|selectattr('music_venue', 'equalto', true)|list %}
-        <a class="dropdown-item" href="{{ url_for('views.activities') + '#music_venue-link' }}"><h4>Music Venue</h4></a>
+    {% if user.activities|selectattr('bakery', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#bakery-link' }}"><h4>Bakery</h4></a>
     {% endif %}
     {% if user.activities|selectattr('comedy_club', 'equalto', true)|list %}
         <a class="dropdown-item" href="{{ url_for('views.activities') + '#comedy_club-link' }}"><h4>Comedy Club</h4></a>
     {% endif %}
+    {% if user.activities|selectattr('music_venue', 'equalto', true)|list %}
+    <a class="dropdown-item" href="{{ url_for('views.activities') + '#music_venue-link' }}"><h4>Music Venue</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('nightclub', 'equalto', true)|list %}
+    <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightclub-link' }}"><h4>Nightclub</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('nightlife', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#nightlife-link' }}"><h4>Nightlife</h4></a>
+    {% endif %}
     {% if user.activities|selectattr('outdoors', 'equalto', true)|list %}
         <a class="dropdown-item" href="{{ url_for('views.activities') + '#outdoors-link' }}"><h4>Outdoors</h4></a>
+    {% endif %}
+    {% if user.activities|selectattr('restaurant', 'equalto', true)|list %}
+        <a class="dropdown-item" href="{{ url_for('views.activities') + '#restaurant-link' }}"><h4>Restaurant</h4></a>
     {% endif %}
     {% if user.activities|selectattr('visited', 'equalto', true)|list %}
         <a class="dropdown-item" href="{{ url_for('views.activities') + '#visited-link' }}"><h4>Visited</h4></a>
@@ -61,9 +61,18 @@
             'outdoors': 'mob-outdoors-icon.svg',
             'visited': 'mob-visited-icon.svg'
         } %}
+        {% set category_display_names ={
+            'adult_ent': 'Adult Entertainment',
+            'music_venue': 'Music Venues',
+            'comedy_club': 'Comedy Clubs',
+            'restaurant': 'Restaurants',
+            'bakery': 'Bakeries',
+            'activity': 'Activities',
+            'nightclub': 'Nightclubs',
 
-
-        {% for category in categories %}
+        } %}
+        {% set sorted_categories = categories|sort %}
+        {% for category in sorted_categories %}
             {% set category_activities = user.activities|selectattr(category, 'equalto', true)|list %}
             {% if category_activities %}
                 
@@ -73,7 +82,7 @@
                         <div class="category-icon">
                             <img src="/static/media/category-icons/{{ categories[category] }}" alt="">
                         </div>
-                        <div class="category-card-title"><h2>{{ category.capitalize() }}</h2></div>
+                        <div class="category-card-title"><h2>{{ category_display_names.get(category, category.capitalize()) }}</h2></div>
                         <div class="expand-btn" data-category="{{ category }}">
                             <i class="fas fa-chevron-down fa-align-center fa-3x" style="padding-top: 5%;"></i> <!-- Assuming you're using Font Awesome for icons -->
                         </div>
@@ -93,8 +102,6 @@
                                     </div>                                
                                 </div>
 
-
-
                                 <div class="icon-edit-delete">
                                     <a href="{{ url_for('views.edit_activity', activity_id=activity.id) }}" class="edit-btn">
                                         <span class="edit-text">Edit</span>
@@ -109,10 +116,8 @@
                                 </div>
                             </div>
                         {% endfor %}
-
                     </div>
-                </div>
-            
+                </div>   
             {% endif %}
         {% endfor %}
     </ul>
