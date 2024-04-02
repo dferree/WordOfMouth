@@ -90,6 +90,18 @@
 
 .dropdown-menu {
     background-color: #219EBC;
+
+    h2{
+        margin-bottom: 0;
+    }
+
+    h3{
+        margin-bottom: 0;
+    }
+}
+
+.dropdown-item:hover{
+    background-color: #FDA138;
 }
 
 .dropdown-divider {

@@ -55,6 +55,14 @@
         margin-top: 1em;
     }
     
+    #submit h3{
+        margin-bottom: 0%;
+    }
+
+    #submit:hover{
+        background-color: #219ebc;
+        color: #FDA138;
+    }
     .already {
         margin-top: 5%;
     }
@@ -71,6 +79,10 @@
         }
     }
     
+    #last{
+        margin-bottom: 0rem;
+    }
+
     .form-check-input {
         position: absolute;
         color: #023047;

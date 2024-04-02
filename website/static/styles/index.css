@@ -147,14 +147,16 @@
 }
 
 .activity-card {
-  background-color: #fb8500;
+  background-color: #fbae4a;
   margin: 1em;
   border-radius: 20px;
   padding: 1em;
+  border-style: solid;
+  border-color: #023047;
 }
 
 .activity-title {
-  background-color: #fb8500;
+  background-color: #fbae4a;
   border-radius: 20px;
   width: auto;
   margin-left: 0.2em;
@@ -168,8 +170,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10em;
-  padding-right: 10em;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
 }
 
 .category-icon {
@@ -190,7 +193,7 @@
 }
 
 .activity-description {
-  background-color: #fc9c00;
+  background-color: #fbae4a;
   border-radius: 5px;
   padding: 1em;
   overflow: hidden;
@@ -339,6 +342,10 @@
 @media (max-width: 767px) {
   .category-card {
     width: 320px;
+  }
+  .category-heading {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
 * {
