@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "python main.py"
+  },
   "dependencies": {
     "include-media": "^2.0.0",
     "react": "^18.2.0",
