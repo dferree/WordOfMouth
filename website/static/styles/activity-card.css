@@ -305,6 +305,7 @@
     display: block;
     background-color: #219ebc;
     font-weight: bold;
+    border-radius: 0.5em;
   }
 }
 @media (max-width: 767px) {
@@ -314,5 +315,8 @@
   .category-heading {
     padding-left: 1em;
     padding-right: 1em;
+  }
+  .checkbox-container {
+    padding-left: 0.5em;
   }
 }/*# sourceMappingURL=activity-card.css.map */

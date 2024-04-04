@@ -192,6 +192,7 @@
   transform: scale(0.8);
 }
 
+
 // edit button
 .edit-btn{
   background-color: #219ebc;
@@ -333,6 +334,10 @@
   .category-heading {
     padding-left: 1em; // Adjusting padding for smaller screens
     padding-right: 1em; // Adjusting padding for smaller screens
+  }
+
+  .checkbox-container{
+    padding-left: 0.5em;
   }
 }
 

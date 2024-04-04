@@ -72,10 +72,11 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         padding-top: 1em;
-        padding-left: 1em;
+        padding-left: 3em;
 
         @include media("<tablet"){
             grid-template-columns: 1fr 1fr;
+            padding-left: 1em;
         }
     }
     

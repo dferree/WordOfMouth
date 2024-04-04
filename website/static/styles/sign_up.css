@@ -60,11 +60,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding-top: 1em;
-  padding-left: 1em;
+  padding-left: 3em;
 }
 @media (max-width: 767px) {
   .form-container .checkbox-container {
     grid-template-columns: 1fr 1fr;
+    padding-left: 1em;
   }
 }
 .form-container #last {
