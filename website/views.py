@@ -70,29 +70,23 @@ def add_activity():
         outdoors = 'outdoors' in request.form
         visited = 'visited' in request.form
         
-        
-        existing_activity = Activity.query.filter_by(title=title, user_id=current_user.id).first()
-        
-        if existing_activity:
-            flash('Activity with the same title already exists.', category='error')
-        else:
-            new_activity = Activity(
-                title=title, 
-                description=description, 
-                user_id=current_user.id,
-                nightlife=nightlife,
-                restaurant=restaurant,
-                bakery=bakery,
-                activity=activity,
-                adult_ent=adult_ent,
-                nightclub=nightclub,
-                music_venue=music_venue,
-                comedy_club=comedy_club,
-                outdoors=outdoors,
-                visited=visited)            
-            db.session.add(new_activity)
-            db.session.commit()
-            flash('Activity added!', category='success')
+        new_activity = Activity(
+            title=title, 
+            description=description, 
+            user_id=current_user.id,
+            nightlife=nightlife,
+            restaurant=restaurant,
+            bakery=bakery,
+            activity=activity,
+            adult_ent=adult_ent,
+            nightclub=nightclub,
+            music_venue=music_venue,
+            comedy_club=comedy_club,
+            outdoors=outdoors,git st
+            visited=visited)            
+        db.session.add(new_activity)
+        db.session.commit()
+        flash('Activity added!', category='success')
 
         # Redirect to the activities page after adding an activity
         return render_template("activities.html", user=current_user)
