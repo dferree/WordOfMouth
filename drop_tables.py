@@ -1,5 +1,5 @@
 from website import create_app, db
-from website.models import User, Note, Activity, Review  # Import all your models
+from website.models import User, Note, Activity  # Import all your models
 
 def drop_all_tables():
     app = create_app()  # Create Flask app instance

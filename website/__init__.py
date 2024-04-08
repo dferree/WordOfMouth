@@ -27,7 +27,7 @@ def create_app(instance_path=None):
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
     
-    from .models import User, Note, Activity, Review
+    from .models import User, Activity
       
     # create database within flask app context  
     with app.app_context():
@@ -48,9 +48,6 @@ def create_app(instance_path=None):
     return app
 
 def create_database(app):
-    if not path.exists(os.path.join(app.instance_path, DB_NAME)):
-        db.create_all()
-        print('Created Database!')
-    else:
-        print('Database exists.')
-        
+    # Create all tables
+    db.create_all()
+    print('Database created.')
