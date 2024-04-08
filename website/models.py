@@ -16,7 +16,7 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(150))
     notes = db.Relationship('Note')
     activities = db.Relationship('Activity')
-    reviews = db.Relationship('Review')
+    # reviews = db.Relationship('Review')
     
 class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -33,15 +33,15 @@ class Activity(db.Model):
     restaurant = db.Column(Boolean, default=False)
     visited = db.Column(Boolean, default=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    reviews = db.Relationship('Review', backref='activity_reviews', lazy='dynamic')
+#     reviews = db.Relationship('Review', backref='activity_reviews', lazy='dynamic')
     
-class Review(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    comment = db.Column(db.String(500))
-    rating = db.Column(db.Integer)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    activity_id = db.Column(db.Integer, db.ForeignKey('activity.id'))
-    activity = db.Relationship('Activity')
+# class Review(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     comment = db.Column(db.String(500))
+#     rating = db.Column(db.Integer)
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+#     activity_id = db.Column(db.Integer, db.ForeignKey('activity.id'))
+#     activity = db.Relationship('Activity')
 
 
     
