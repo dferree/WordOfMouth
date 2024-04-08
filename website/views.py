@@ -82,7 +82,7 @@ def add_activity():
             nightclub=nightclub,
             music_venue=music_venue,
             comedy_club=comedy_club,
-            outdoors=outdoors,git st
+            outdoors=outdoors,
             visited=visited)            
         db.session.add(new_activity)
         db.session.commit()
