@@ -53,3 +53,4 @@ def create_database(app):
         print('Created Database!')
     else:
         print('Database exists.')
+        
