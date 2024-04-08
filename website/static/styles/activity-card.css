@@ -305,7 +305,10 @@
     display: block;
     background-color: #219ebc;
     font-weight: bold;
-    border-radius: 0.5em;
+    border-radius: 0.25em;
+  }
+  .tab-phone-add:hover {
+    background-color: #fb8500;
   }
 }
 @media (max-width: 767px) {
