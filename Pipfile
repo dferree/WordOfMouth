@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 gunicorn = "20.1.0"
 flask-scss = "*"
+sql-alchemy = "*"
+flask-login = "*"
 
 [dev-packages]
 
