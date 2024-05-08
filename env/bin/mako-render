@@ -1,4 +1,4 @@
-#!/Users/danielferree/Desktop/code/dferree/WordOfMouth/env/bin/python3.12
+#!/Users/danielferree/Desktop/code/dferree/WordOfMouth/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
